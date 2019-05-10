@@ -26,7 +26,7 @@ services:
     ports:
       - 7050:7050
     volumes:
-        - ./:/etc/hyperledger/configtx
+        - ./channel-artifacts/:/etc/hyperledger/configtx
         - ./crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/msp:/etc/hyperledger/msp/orderer/msp
         - ./crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/tls:/etc/hyperledger/tls/orderer/tls
     depends_on:
@@ -65,7 +65,7 @@ services:
       - 7053:7053
     volumes:
         - /var/run/:/host/var/run/
-        - ./:/etc/hyperledger/configtx
+        - ./channel-artifacts/:/etc/hyperledger/configtx
         - ./crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/msp:/etc/hyperledger/peer/msp
         - ./crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/tls:/etc/hyperledger/peer/tls
         - ./crypto-config/peerOrganizations/org1.bc.cip/users:/etc/hyperledger/msp/users
@@ -113,7 +113,7 @@ services:
       - 8053:7053
     volumes:
         - /var/run/:/host/var/run/
-        - ./:/etc/hyperledger/configtx
+        - ./channel-artifacts/:/etc/hyperledger/configtx
         - ./crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/msp:/etc/hyperledger/peer/msp
         - ./crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/tls:/etc/hyperledger/peer/tls
         - ./crypto-config/peerOrganizations/org1.bc.cip/users:/etc/hyperledger/msp/users

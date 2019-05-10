@@ -25,7 +25,7 @@ services:
     ports:
       - 7050:7050
     volumes:
-        - ./:/etc/hyperledger/configtx
+        - ./channel-artifacts/:/etc/hyperledger/configtx
         - ./crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/msp:/etc/hyperledger/msp/orderer/msp
         - ./crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/tls:/etc/hyperledger/tls/orderer/tls
     depends_on:
