@@ -154,7 +154,7 @@ registry:
 #############################################################################
 db:
   type: postgres
-  datasource: host=localhost port=5432 user=admin password=adminpw dbname=fabric sslmode=disable
+  datasource: host=pg_master port=5432 user=admin password=adminpw dbname=fabric sslmode=disable
   tls:
     enabled: false
     certfiles:
