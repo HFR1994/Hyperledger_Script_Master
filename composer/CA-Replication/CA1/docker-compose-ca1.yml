@@ -18,6 +18,7 @@ services:
     command: sh -c 'fabric-ca-server start -c /etc/hyperledger/fabric-ca-server-config/fabric-ca-server-config.yaml --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.org1.bc.cip-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/b2223f073430a39e5c0983b1e2eeb018799cc5717d689b015af42b8cce90ffc6_sk -b admin:adminpw -d'
     volumes:
       - ../../crypto-config/peerOrganizations/org1.bc.cip/ca/:/etc/hyperledger/fabric-ca-server-config
+      - ../../fabric-ca-server-config.yaml:/etc/hyperledger/fabric-ca-server-config/fabric-ca-server-config.yaml
     container_name: ca1.org1.bc.cip
     depends_on:
       - pg_master

@@ -37,7 +37,7 @@
 #############################################################################
 
 # Version of config file
-version: 1.0
+version: 1.4.1
 
 # Server's listening port (default: 7054)
 port: 7054
@@ -129,8 +129,8 @@ registry:
 
   # Contains identity information which is used when LDAP is disabled
   identities:
-    - name: <<<adminUserName>>>
-      pass: <<<adminPassword>>>
+    - name: admin
+      pass: adminpw
       type: client
       affiliation: ""
       attrs:
@@ -307,7 +307,7 @@ signing:
 #     CA certificates though it can still issue end entity certificates.
 ###########################################################################
 csr:
-  cn: <<<COMMONNAME>>>
+  cn: fabric-ca-server
   keyrequest:
     algo: ecdsa
     size: 256
@@ -318,11 +318,11 @@ csr:
       O: Hyperledger
       OU: Fabric
   hosts:
-    - <<<MYHOST>>>
+    - 49809874a6c9
     - localhost
   ca:
     expiry: 131400h
-    pathlength: <<<PATHLENGTH>>>
+    pathlength: 1
 
 ###########################################################################
 # Each CA can issue both X509 enrollment certificate as well as Idemix
