@@ -1,0 +1,29 @@
+OrdererOrgs:
+  - Name: Orderer
+    Domain: example.com
+    Specs:
+      - Hostname: orderer0
+        SANS:
+          - 192.168.1.2
+      - Hostname: orderer1
+        SANS:
+          - 192.168.1.3
+      - Hostname: orderer2
+        SANS:
+          - {IP-HOST-3}
+
+PeerOrgs:
+  - Name: Org1
+    Domain: org1.example.com
+    EnableNodeOUs: true
+    Specs:
+      - Hostname: peer
+        SANS:
+          - 192.168.1.2
+          - 192.168.1.3
+          - {IP-HOST-3}
+
+    Template:
+      Count: 6
+    Users:
+      Count: 0 

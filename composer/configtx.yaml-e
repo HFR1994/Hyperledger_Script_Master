@@ -1,0 +1,73 @@
+Profiles:
+    ComposerOrdererGenesis:
+        Orderer:
+            <<: *OrdererDefaults
+            Organizations:
+                - *OrdererOrg
+        Consortiums:
+            ComposerConsortium:
+                Organizations:
+                    - *Org1
+    ComposerChannel:
+        Consortium: ComposerConsortium
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - *Org1
+Organizations:
+    - &OrdererOrg
+        Name: OrdererOrg
+        ID: OrdererMSP
+        MSPDir: crypto-config/ordererOrganizations/example.com/msp
+        AdminPrincipal: Role.MEMBER
+    - &Org1
+        Name: Org1
+        ID: Org1MSP
+        MSPDir: crypto-config/peerOrganizations/org1.example.com/msp
+        AdminPrincipal: Role.MEMBER
+        AnchorPeers:
+            - Host: peer0.org1.example.com
+              Port: 7051
+            - Host: peer2.org1.example.com
+            - Port: 9051
+            - Host: peer4.org1.example.com
+            - Port: 9051
+
+Orderer: &OrdererDefaults
+    OrdererType: kafka
+    Addresses:
+        - 192.168.1.2:7050
+        - 192.168.1.3:7050
+        - {IP-HOST-3}:7050
+
+    BatchTimeout: 2s
+    BatchSize:
+        MaxMessageCount: 10
+        AbsoluteMaxBytes: 98 MB
+        PreferredMaxBytes: 512 KB
+    Kafka:
+        Brokers:
+            - 192.168.1.2:9092
+            - 192.168.1.2:10092
+            - 192.168.1.2:11092
+            - 192.168.1.2:12092
+            - 192.168.1.3:9092
+            - 192.168.1.3:10092
+            - 192.168.1.3:11092
+            - 192.168.1.3:12092
+            - {IP-HOST-3}:9092
+            - {IP-HOST-3}:10092
+            - {IP-HOST-3}:11092
+            - {IP-HOST-3}:12092
+
+    Organizations:
+
+Application: &ApplicationDefaults
+    Organizations:
+Capabilities:
+    Global: &ChannelCapabilities
+        V1_1: true
+    Orderer: &OrdererCapabilities
+        V1_1: true
+    Application: &ApplicationCapabilities
+        V1_1: true
