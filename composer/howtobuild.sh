@@ -32,5 +32,5 @@ configtxgen -profile ModeKafkaChannel -outputCreateChannelTx ./channel-artifacts
 configtxgen -profile ModeKafkaChannel -outputAnchorPeersUpdate ./channel-artifacts/Org1MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org1MSP
 ORG1KEY="$(ls crypto-config/peerOrganizations/org1.bc.cip/ca/ | grep 'sk$')"
 
-sed -i -e "s/{ORG1-CA-KEY}/$ORG1KEY/g" CA-Replication/CA1/docker-compose-ca1.yml
-sed -i -e "s/{ORG1-CA-KEY}/$ORG1KEY/g" CA-Replication/CA2/docker-compose-ca2.yml
+sed -i -e "s/{ORG1-CA-KEY}/$ORG1KEY/g" ./CA-Replication/CA1/docker-compose-ca1.yml
+sed -i -e "s/{ORG1-CA-KEY}/$ORG1KEY/g" ./CA-Replication/CA2/docker-compose-ca2.yml
