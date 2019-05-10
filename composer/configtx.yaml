@@ -83,7 +83,7 @@ Organizations:
                 Type: Signature
                 Rule: "OR('OrdererMSP.admin')"
     - &Org1
-        Name: Org1
+        Name: Org1MSP
         ID: Org1MSP
         MSPDir: crypto-config/peerOrganizations/org1.bc.cip/msp
         AdminPrincipal: Role.MEMBER
