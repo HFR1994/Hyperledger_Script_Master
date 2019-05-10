@@ -17,6 +17,8 @@ services:
       - ../../crypto-config/peerOrganizations/org1.bc.cip/ca/:/etc/hyperledger/fabric-ca-server-config
       - ../../fabric-ca-server-config.yaml:/etc/hyperledger/fabric-ca-server-config
     container_name: ca2.org1.bc.cip
+    depends_on:
+      - pg_slave
     networks:
       default:
         aliases:
