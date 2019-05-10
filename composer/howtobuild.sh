@@ -23,7 +23,9 @@ sed -i -e "s/{IP-HOST-1}/$HOST1/g" ../createPeerAdminCard.sh
 sed -i -e "s/{IP-HOST-2}/$HOST2/g" ../createPeerAdminCard.sh
 sed -i -e "s/{IP-HOST-3}/$HOST3/g" ../createPeerAdminCard.sh
 
-
+rm -rf crypto-config
+rm -rf channel-artifacts
+mkdir channel-artifacts
 cryptogen generate --config=./crypto-config.yaml
 export FABRIC_CFG_PATH=$PWD
 
