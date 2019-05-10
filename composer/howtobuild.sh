@@ -23,17 +23,13 @@ sed -i -e "s/{IP-HOST-2}/$HOST2/g" ../createPeerAdminCard.sh
 sed -i -e "s/{IP-HOST-3}/$HOST3/g" ../createPeerAdminCard.sh
 
 
-##cryptogen generate --config=./crypto-config.yaml
-##export FABRIC_CFG_PATH=$PWD
+cryptogen generate --config=./crypto-config.yaml
+export FABRIC_CFG_PATH=$PWD
 
-configtxgen -profile SampleDevModeKafka -channelID byfn-sys-channel -outputBlock ./channel-artifacts/genesis.block
-configtxgen -profile TwoOrgsChannel -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID $CHANNEL_NAME
-configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/Org1MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org1MSP
+configtxgen -profile ModeKafkaOrderer -channelID $CHANNEL_NAME -outputBlock ./channel-artifacts/genesis.block
+configtxgen -profile ModeKafkaChannel -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID $CHANNEL_NAME
+configtxgen -profile ModeKafkaChannel -outputAnchorPeersUpdate ./channel-artifacts/Org1MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org1MSP
+ORG1KEY="$(ls crypto-config/peerOrganizations/org1.bc.cip/ca/ | grep 'sk$')"
 
-
-##configtxgen -profile ComposerOrdererGenesis -outputBlock ./composer-genesis.block
-##configtxgen -profile ComposerChannel -outputCreateChannelTx ./composer-channel.tx -channelID composerchannel
-
-##ORG1KEY="$(ls crypto-config/peerOrganizations/org1.example.com/ca/ | grep 'sk$')"
-
-##sed -i -e "s/{ORG1-CA-KEY}/$ORG1KEY/g" docker-compose.yml
+sed -i -e "s/{ORG1-CA-KEY}/$ORG1KEY/g" CA-Replication/CA1/docker-compose-ca1.yml
+sed -i -e "s/{ORG1-CA-KEY}/$ORG1KEY/g" CA-Replication/CA2/docker-compose-ca1.yml

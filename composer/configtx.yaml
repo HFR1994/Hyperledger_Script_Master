@@ -191,7 +191,7 @@ Profiles:
             InitialConsortium:
                 Organizations:
                     - *Org1
-    ComposerChannel:
+    ModeKafkaChannel:
         <<: *ChannelDefaults
         Consortium: InitialConsortium
         Application:
