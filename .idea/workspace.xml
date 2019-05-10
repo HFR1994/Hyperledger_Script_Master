@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a1869e4-d1b9-41c0-87c6-ee12d1ee45c6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/composer/CA-Replication/CA1/startCA1.sh" beforeDir="false" afterPath="$PROJECT_DIR$/composer/CA-Replication/CA1/startCA1.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer/CA-Replication/CA2/startCA2.sh" beforeDir="false" afterPath="$PROJECT_DIR$/composer/CA-Replication/CA2/startCA2.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/composer/fabric-ca-server-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/CA-Replication/CA1/crypto-config/peerOrganizations/org1.bc.cip/ca/ca.org1.bc.cip-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/CA-Replication/CA1/docker-compose-ca1.yml" beforeDir="false" afterPath="$PROJECT_DIR$/composer/CA-Replication/CA1/docker-compose-ca1.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/CA-Replication/CA2/docker-compose-ca2.yml" beforeDir="false" afterPath="$PROJECT_DIR$/composer/CA-Replication/CA2/docker-compose-ca2.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,24 +20,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/startFabric.sh">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA1/docker-compose-ca1.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="19" column="86" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="19" selection-end-column="86" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA1/startCA1.sh">
+        <entry file="file://$PROJECT_DIR$/composer/fabric-ca-server-config.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="6" selection-start-line="11" selection-end-line="12" />
+            <state relative-caret-position="103">
+              <caret line="156" column="82" selection-start-line="156" selection-start-column="82" selection-end-line="156" selection-end-column="82" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA2/startCA2.sh">
+        <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA2/docker-compose-ca2.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+            <state relative-caret-position="276">
+              <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer/howtobuild.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -53,6 +69,8 @@
       <find>ORG1-CA-KEY</find>
       <find>fabric-couch</find>
       <find>ARCH</find>
+      <find>datasource</find>
+      <find>fabric-ca-server-config</find>
     </findStrings>
     <replaceStrings>
       <replace>bc.cip</replace>
@@ -60,6 +78,7 @@
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/composer</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -80,13 +99,14 @@
         <option value="$PROJECT_DIR$/composer/CA-Replication/Dockerfile" />
         <option value="$PROJECT_DIR$/composer/CA-Replication/CA2/Dockerfile" />
         <option value="$PROJECT_DIR$/composer/CA-Replication/CA1/setup-master.sh" />
-        <option value="$PROJECT_DIR$/composer/CA-Replication/CA1/docker-compose-ca1.yml" />
         <option value="$PROJECT_DIR$/composer/CA-Replication/CA2/docker-entrypoint.sh" />
-        <option value="$PROJECT_DIR$/composer/CA-Replication/CA2/docker-compose-ca2.yml" />
         <option value="$PROJECT_DIR$/composer/howtobuild.sh" />
         <option value="$PROJECT_DIR$/composer/configtx.yaml" />
         <option value="$PROJECT_DIR$/composer/CA-Replication/CA1/startCA1.sh" />
         <option value="$PROJECT_DIR$/composer/CA-Replication/CA2/startCA2.sh" />
+        <option value="$PROJECT_DIR$/fabric-ca-server-config.yaml" />
+        <option value="$PROJECT_DIR$/composer/CA-Replication/CA1/docker-compose-ca1.yml" />
+        <option value="$PROJECT_DIR$/composer/CA-Replication/CA2/docker-compose-ca2.yml" />
       </list>
     </option>
   </component>
@@ -112,26 +132,6 @@
               <item name="Hyperledger_Script_Maker" type="462c0819:PsiDirectoryNode" />
               <item name="composer" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Hyperledger_Script_Maker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hyperledger_Script_Maker" type="462c0819:PsiDirectoryNode" />
-              <item name="composer" type="462c0819:PsiDirectoryNode" />
-              <item name="CA-Replication" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Hyperledger_Script_Maker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hyperledger_Script_Maker" type="462c0819:PsiDirectoryNode" />
-              <item name="composer" type="462c0819:PsiDirectoryNode" />
-              <item name="CA-Replication" type="462c0819:PsiDirectoryNode" />
-              <item name="CA1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Hyperledger_Script_Maker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hyperledger_Script_Maker" type="462c0819:PsiDirectoryNode" />
-              <item name="composer" type="462c0819:PsiDirectoryNode" />
-              <item name="CA-Replication" type="462c0819:PsiDirectoryNode" />
-              <item name="CA2" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -147,6 +147,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/composer" />
       <recent name="$PROJECT_DIR$/composer/CA-Replication/CA2" />
       <recent name="$PROJECT_DIR$/composer/CA-Replication/CA1" />
       <recent name="$PROJECT_DIR$/composer/CA-Replication" />
@@ -184,12 +185,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14218000" />
+    <option name="totallyTimeSpent" value="16792000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33121917" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33121917" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -201,7 +203,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32769832" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32769832" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32769832" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -384,32 +386,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/composer/howtobuild.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
+        <state relative-caret-position="42">
           <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA1/setup-master.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA1/docker-compose-ca1.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/startFabric.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA2/docker-compose-ca2.yml">
+    <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA2/startCA2.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="16" />
+        <state relative-caret-position="253">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/ca/b2223f073430a39e5c0983b1e2eeb018799cc5717d689b015af42b8cce90ffc6_sk">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/msp/config.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA1/setup-master.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -420,10 +421,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA2/startCA2.sh">
+    <entry file="file://$PROJECT_DIR$/composer/fabric-ca-server-config.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        <state relative-caret-position="103">
+          <caret line="156" column="82" selection-start-line="156" selection-start-column="82" selection-end-line="156" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA1/docker-compose-ca1.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="19" column="86" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="19" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA2/docker-compose-ca2.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
         </state>
       </provider>
     </entry>
