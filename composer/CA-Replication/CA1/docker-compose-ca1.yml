@@ -24,7 +24,7 @@ services:
           - ca_network
 
   pg_master:
-    build: ./CA1
+    build: .
     volumes:
       - pg_data:/var/lib/postgresql/data
     environment:

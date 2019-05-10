@@ -21,7 +21,7 @@ services:
           - ca_network
 
   pg_slave:
-    build: ./CA2
+    build: .
     environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=adminpw
