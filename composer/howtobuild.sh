@@ -1,27 +1,6 @@
 #!/bin/bash
 cd "$(dirname "$0")"
-HOST1=192.168.1.2
-HOST2=192.168.1.3
-HOST3=192.168.1.4
 CHANNEL_NAME=default
-
-sed -i -e "s/{IP-HOST-1}/$HOST1/g" configtx.yaml
-sed -i -e "s/{IP-HOST-2}/$HOST2/g" configtx.yaml
-sed -i -e "s/{IP-HOST-3}/$HOST3/g" configtx.yaml
-
-sed -i -e "s/{IP-HOST-1}/$HOST1/g" crypto-config.yaml
-sed -i -e "s/{IP-HOST-2}/$HOST2/g" crypto-config.yaml
-sed -i -e "s/{IP-HOST-3}/$HOST3/g" crypto-config.yaml
-
-sed -i -e "s/{IP-HOST-1}/$HOST1/g" docker-compose.yml
-sed -i -e "s/{IP-HOST-1}/$HOST1/g" docker-compose-peer2.yml
-sed -i -e "s/{IP-HOST-2}/$HOST2/g" docker-compose-peer2.yml
-sed -i -e "s/{IP-HOST-1}/$HOST1/g" docker-compose-peer3.yml
-sed -i -e "s/{IP-HOST-3}/$HOST3/g" docker-compose-peer3.yml
-
-sed -i -e "s/{IP-HOST-1}/$HOST1/g" ../createPeerAdminCard.sh
-sed -i -e "s/{IP-HOST-2}/$HOST2/g" ../createPeerAdminCard.sh
-sed -i -e "s/{IP-HOST-3}/$HOST3/g" ../createPeerAdminCard.sh
 
 rm -rf crypto-config
 rm -rf channel-artifacts

@@ -1,0 +1,42 @@
+version: "3"
+
+services:
+  ca.org1.bc.cip:
+    image: hyperledger/fabric-ca:$IMAGETAG
+    environment:
+      - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+      - FABRIC_CA_SERVER_CA_NAME=ca.org1.bc.cip
+      - FABRIC_CA_SERVER_TLS_ENABLED=true
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org1.bc.cip-cert.pem
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/{ORG1-CA-KEY}
+      - REP_HOST=192.168.1.2
+    ports:
+      - "7054:7054"
+    command: sh -c 'fabric-ca-server start -c /etc/hyperledger/fabric-ca-server-config/fabric-ca-server-config.yaml --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.org1.bc.cip-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/{ORG1-CA-KEY} -b admin:adminpw -d'
+    volumes:
+      - ../../crypto-config/peerOrganizations/org1.bc.cip/ca/:/etc/hyperledger/fabric-ca-server-config
+      - ./fabric-ca-server-config.yaml:/etc/hyperledger/fabric-ca-server-config/fabric-ca-server-config.yaml
+    container_name: ca2.org1.bc.cip
+    depends_on:
+      - pg_slave
+    networks:
+      default:
+        aliases:
+          - ca_network
+
+  pg_slave:
+    build: .
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=adminpw
+      - POSTGRES_DB=fabric
+      - PG_REP_USER=rep_admin
+      - PG_REP_PASSWORD=adminpw
+      - PG_REP_HOST=192.168.1.2
+    ports:
+      - "5432:5432"
+    container_name: pg_slave.org1.bc.cip
+    networks:
+      default:
+        aliases:
+          - ca_network
