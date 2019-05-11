@@ -33,18 +33,18 @@ echo ${FABRIC_START_TIMEOUT}
 sleep ${FABRIC_START_TIMEOUT}
 
 # Create the channel
-docker exec peer0.org1.bc.cip peer channel create -o orderer0.bc.cip:7050 -c composerchannel -f /etc/hyperledger/configtx/composer-channel.tx --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.bc.cip-cert.pem
+docker exec peer0.org1.bc.cip peer channel create -o orderer0.bc.cip:7050 -c default -f /etc/hyperledger/configtx/channel.tx --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.bc.cip-cert.pem
 
 echo ${FABRIC_START_TIMEOUT}
 sleep ${FABRIC_START_TIMEOUT}
 sleep ${FABRIC_START_TIMEOUT}
 
 # Join peer0.org1.bc.cip to the channel.
-docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.bc.cip/msp" peer0.org1.bc.cip peer channel join -b composerchannel.block --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.bc.cip-cert.pem
+docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.bc.cip/msp" peer0.org1.bc.cip peer channel join -b genesis.block --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.bc.cip-cert.pem
 
 # # Create the channel
-docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.bc.cip/msp" peer1.org1.bc.cip peer channel fetch config -o orderer0.bc.cip:7050 -c composerchannel --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.bc.cip-cert.pem
-# docker exec peer1.org1.bc.cip peer channel create -o orderer.bc.cip:7050 -c composerchannel -f /etc/hyperledger/configtx/composer-channel.tx
+docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.bc.cip/msp" peer1.org1.bc.cip peer channel fetch config -o orderer0.bc.cip:7050 -c default --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.bc.cip-cert.pem
+# docker exec peer1.org1.bc.cip peer channel create -o orderer.bc.cip:7050 -c default -f /etc/hyperledger/configtx/composer-channel.tx
 
 # # Join peer1.org1.bc.cip to the channel.
-docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.bc.cip/msp" peer1.org1.bc.cip peer channel join -b composerchannel_config.block --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.bc.cip-cert.pem
+docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.bc.cip/msp" peer1.org1.bc.cip peer channel join -b default_config.block --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.bc.cip-cert.pem

@@ -41,8 +41,8 @@ sed -i -e "s/{IP-HOST-1}/$HOST1/g" ../createPeerAdminCard.sh
 
 cryptogen generate --config=./crypto-config.yaml
 export FABRIC_CFG_PATH=$PWD
-configtxgen -profile ComposerOrdererGenesis -outputBlock ./composer-genesis.block
-configtxgen -profile ComposerChannel -outputCreateChannelTx ./composer-channel.tx -channelID composerchannel
+configtxgen -profile ComposerOrdererGenesis -outputBlock ./genesis.block
+configtxgen -profile Default -outputCreateChannelTx ./composer-channel.tx -channelID default
 
 ORG1KEY="$(ls crypto-config/peerOrganizations/org1.example.com/ca/ | grep 'sk$')"
 

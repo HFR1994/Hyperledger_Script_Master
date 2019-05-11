@@ -31,7 +31,7 @@ file = """Profiles:
             ComposerConsortium:
                 Organizations:
                     - *Org1
-    ComposerChannel:
+    Default:
         Consortium: ComposerConsortium
         Application:
             <<: *ApplicationDefaults

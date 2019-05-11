@@ -83,7 +83,7 @@ cat << EOF > connection.json
         }
     },
     "channels": {
-        "composerchannel": {
+        "default": {
             "orderers": [
                 "orderer0.example.com",
                 "orderer1.example.com",
