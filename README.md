@@ -6,7 +6,7 @@
 https://ibm.box.com/s/obelaje9482pcqdwh4olm7js4afvi587
 ```
 
-##Initializiation
+##initialization
 ```
 git clone https://github.com/InflatibleYoshi/fabric-1.1-kafka-multi-orderer
 cd Hyper_Script_Maker
