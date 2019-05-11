@@ -1,29 +1,51 @@
-# Hyperledger Fabric 1.1 TLS + KAFKA + MULTI MACHINE + MULTI ORDERER setup
+# Hyperledger Fabric 1.4 Multinode, MultiOrderer across three nodes
 
-### This is no longer a work in progress but I do not consider this build 100% complete unless it is subject to some testing.
+## VM can be found here
 
+```
+https://ibm.box.com/s/obelaje9482pcqdwh4olm7js4afvi587
+```
+
+##Initializiation
 ```
 git clone https://github.com/InflatibleYoshi/fabric-1.1-kafka-multi-orderer
-cd fabric-1.1-kafka-multi-orderer
-./installPrerequisites.sh
-./installPrerequisites2.sh
-python start.py {# of peers}
+cd Hyper_Script_Maker
 cd composer
-```
-### Change the IP addresses in howtobuild.sh and set them to the ip addresses of each host
-```
-chmod +x howtobuild.sh
 ./howtobuild.sh
-cd ..
-chmod +x startFabric.sh
 ```
-### scp the directory to all the peers.
+
+###Worker 1
+
 ```
-# write “'HOST1-IP' orderer0 orderer0.example.com” to /etc/hosts
-cd fabric-1.1-kafka-multi-orderer/
-chmod +x startFabric-Peer(n).sh
-./startFabric-Peer(n).sh
-chmod +x createPeerAdminCard.sh
-./createPeerAdminCard.sh
-composer-playground
+cd CA-Replication
+cd CA1
+./startCA1.sh
+```
+
+###Worker 2
+
+```
+cd CA-Replication
+cd CA2
+./startCA2.sh
+```
+
+## Install Everything else
+
+###Worker 1
+
+```
+./startFabric.sh
+```
+
+###Worker 2
+
+```
+./startFabric-Peers2.sh
+```
+
+###Worker 3
+
+```
+./startFabric-Peers3.sh
 ```
