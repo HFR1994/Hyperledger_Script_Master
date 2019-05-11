@@ -60,7 +60,7 @@ Channel: &ChannelDefaults
     # dedicated Capabilities section elsewhere in this file for a full
     # description
     Capabilities:
-        <<: *ChannelCapabilities
+        #<<: *ChannelCapabilities
 
 Organizations:
     - &OrdererOrg
@@ -122,7 +122,7 @@ Application: &ApplicationDefaults
             Rule: "MAJORITY Admins"
 
     Capabilities:
-        <<: *ApplicationCapabilities
+        #<<: *ApplicationCapabilities
 
 Orderer: &OrdererDefaults
     OrdererType: kafka
@@ -154,7 +154,7 @@ Orderer: &OrdererDefaults
     Organizations:
         - *OrdererOrg
     Capabilities:
-        <<: *OrdererCapabilities
+        #<<: *OrdererCapabilities
 
     Policies:
         Readers:
@@ -176,7 +176,7 @@ Profiles:
     ModeKafkaOrderer:
         <<: *ChannelDefaults
         Capabilities:
-            <<: *ChannelCapabilities
+            #<<: *ChannelCapabilities
         Orderer:
             <<: *OrdererDefaults
         Application:
@@ -195,4 +195,4 @@ Profiles:
             Organizations:
                 - *Org1
         Capabilities:
-            <<: *ApplicationCapabilities
+            #<<: *ApplicationCapabilities
