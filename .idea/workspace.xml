@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a1869e4-d1b9-41c0-87c6-ee12d1ee45c6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/composer/crypto-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/composer/crypto-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/configtx.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/composer/configtx.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,7 +19,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/startFabric.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
+            <state relative-caret-position="275">
               <caret line="43" selection-start-line="43" selection-end-line="43" />
             </state>
           </provider>
@@ -27,8 +28,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/composer/crypto-config.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+            <state relative-caret-position="345">
+              <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer/docker-compose.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-593">
+              <caret line="2" selection-start-line="2" selection-end-line="3" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -36,8 +46,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/composer/configtx.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1039">
-              <caret line="66" column="24" lean-forward="true" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
+            <state relative-caret-position="152">
+              <caret line="179" column="17" selection-start-line="179" selection-start-column="17" selection-end-line="179" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -46,8 +56,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>master</find>
-      <find>MSP</find>
       <find>ORG1-CA-KEY</find>
       <find>fabric-couch</find>
       <find>ARCH</find>
@@ -76,6 +84,8 @@
       <find>4</find>
       <find>ORG1</find>
       <find>org1</find>
+      <find>worker</find>
+      <find>role</find>
     </findStrings>
     <replaceStrings>
       <replace>biz.cp</replace>
@@ -128,10 +138,10 @@
         <option value="$PROJECT_DIR$/composer/CA-Replication/CA1/startCA1.sh" />
         <option value="$PROJECT_DIR$/startFabric.sh" />
         <option value="$PROJECT_DIR$/composer/docker-compose.yml" />
-        <option value="$PROJECT_DIR$/composer/configtx.yaml" />
         <option value="$PROJECT_DIR$/stopFabric.sh" />
         <option value="$PROJECT_DIR$/composer/CA-Replication/CA1/docker-compose-ca1.yml" />
         <option value="$PROJECT_DIR$/composer/crypto-config.yaml" />
+        <option value="$PROJECT_DIR$/composer/configtx.yaml" />
       </list>
     </option>
   </component>
@@ -157,49 +167,6 @@
               <item name="Hyperledger_Script_Maker" type="b2602c69:ProjectViewProjectNode" />
               <item name="Hyperledger_Script_Maker" type="462c0819:PsiDirectoryNode" />
               <item name="composer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Hyperledger_Script_Maker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hyperledger_Script_Maker" type="462c0819:PsiDirectoryNode" />
-              <item name="composer" type="462c0819:PsiDirectoryNode" />
-              <item name="CA-Replication" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Hyperledger_Script_Maker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hyperledger_Script_Maker" type="462c0819:PsiDirectoryNode" />
-              <item name="composer" type="462c0819:PsiDirectoryNode" />
-              <item name="CA-Replication" type="462c0819:PsiDirectoryNode" />
-              <item name="CA1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Hyperledger_Script_Maker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hyperledger_Script_Maker" type="462c0819:PsiDirectoryNode" />
-              <item name="composer" type="462c0819:PsiDirectoryNode" />
-              <item name="crypto-config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Hyperledger_Script_Maker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hyperledger_Script_Maker" type="462c0819:PsiDirectoryNode" />
-              <item name="composer" type="462c0819:PsiDirectoryNode" />
-              <item name="crypto-config" type="462c0819:PsiDirectoryNode" />
-              <item name="peerOrganizations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Hyperledger_Script_Maker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hyperledger_Script_Maker" type="462c0819:PsiDirectoryNode" />
-              <item name="composer" type="462c0819:PsiDirectoryNode" />
-              <item name="crypto-config" type="462c0819:PsiDirectoryNode" />
-              <item name="peerOrganizations" type="462c0819:PsiDirectoryNode" />
-              <item name="org1.bc.cip" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Hyperledger_Script_Maker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hyperledger_Script_Maker" type="462c0819:PsiDirectoryNode" />
-              <item name="composer" type="462c0819:PsiDirectoryNode" />
-              <item name="crypto-config" type="462c0819:PsiDirectoryNode" />
-              <item name="peerOrganizations" type="462c0819:PsiDirectoryNode" />
-              <item name="org1.bc.cip" type="462c0819:PsiDirectoryNode" />
-              <item name="peers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -237,7 +204,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Bash.howtobuild.sh">
+    <configuration name="howtobuild.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
+      <module name="Hyperledger_Script_Maker" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="PROJECT_INTERPRETER" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/composer" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/composer/howtobuild.sh" />
+      <option name="PARAMETERS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="stopFabric.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
+      <module name="Hyperledger_Script_Maker" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="PROJECT_INTERPRETER" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stopFabric.sh" />
+      <option name="PARAMETERS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="composer/docker-compose-peer2.yml.zookeeper1: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings>
@@ -253,6 +242,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Bash.howtobuild.sh" />
+        <item itemvalue="Bash.stopFabric.sh" />
         <item itemvalue="Docker.composer/docker-compose-peer2.yml.zookeeper1: Compose Deployment" />
       </list>
     </recent_temporary>
@@ -269,23 +260,22 @@
       <updated>1557380404419</updated>
       <workItem from="1557380405725" duration="12580000" />
       <workItem from="1557517383750" duration="1638000" />
-      <workItem from="1557539887223" duration="12024000" />
+      <workItem from="1557539887223" duration="16550000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38448000" />
+    <option name="totallyTimeSpent" value="42974000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33121917" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.55526656" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32769832" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -361,14 +351,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/installPrerequisites.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/terraform/main.tf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3597" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer/docker-compose-peer2.yml-e">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -416,9 +398,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/ca/b2223f073430a39e5c0983b1e2eeb018799cc5717d689b015af42b8cce90ffc6_sk">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/msp/config.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/createPeerAdminCard.sh">
@@ -545,13 +524,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" selection-start-line="2" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA1/docker-compose-ca1.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -566,6 +538,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/msp/config.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/msp/config.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/msp/config.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/stopFabric.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -573,24 +554,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/msp/config.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/msp/admincerts/Admin@org1.bc.cip-cert.pem">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/ca/fabric-ca-server-config.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/startFabric.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
+        <state relative-caret-position="275">
           <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-593">
+          <caret line="2" selection-start-line="2" selection-end-line="3" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer/crypto-config.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+        <state relative-caret-position="345">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer/configtx.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1039">
-          <caret line="66" column="24" lean-forward="true" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
+        <state relative-caret-position="152">
+          <caret line="179" column="17" selection-start-line="179" selection-start-column="17" selection-end-line="179" selection-end-column="17" />
         </state>
       </provider>
     </entry>

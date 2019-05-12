@@ -22,10 +22,12 @@ ARCH=`uname -m`
 # Grab the current directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+ORG1CAKEY="$(ls ./composer/crypto-config/peerOrganizations/org1.bc.cip/ca/ | grep 'sk$')"
+
 IMAGETAG="latest"
 
-IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/composer/docker-compose.yml down
-IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/composer/docker-compose.yml up -d
+ORG1CAKEY=$ORG1CAKEY IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/composer/docker-compose.yml down
+ORG1CAKEY=$ORG1CAKEY IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/composer/docker-compose.yml up -d
 
 # wait for Hyperledger Fabric to start
 # incase of errors when running later commands, issue export FABRIC_START_TIMEOUT=<larger number>
