@@ -3,6 +3,10 @@ version: '2'
 volumes:
   pg_data:
 
+networks:
+  worker1:
+  ca_network:
+
 services:
   ca.org1.bc.cip:
     image: hyperledger/fabric-ca:$IMAGETAG
