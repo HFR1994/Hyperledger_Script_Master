@@ -12,7 +12,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Shut down the Docker containers that might be currently running.
 cd "${DIR}"/composer
 
-rm -rf crypto-config channel-artifacts
 git pull origin master
 docker container stop $(docker container ls -aq)
 docker rm $(docker ps -a -q)
