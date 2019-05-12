@@ -180,13 +180,12 @@ Profiles:
         Application:
             <<: *ApplicationDefaults
             Organizations:
-                - <<: *OrdererOrg
+            - <<: *OrdererOrg
         Consortiums:
             InitialConsortium:
                 Organizations:
                     - *Org1
     ModeKafkaChannel:
-        <<: *ChannelDefaults
         Consortium: InitialConsortium
         Application:
             <<: *ApplicationDefaults

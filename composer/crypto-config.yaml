@@ -17,7 +17,7 @@ PeerOrgs:
     Domain: org1.bc.cip
     EnableNodeOUs: true
     Specs:
-      - Hostname: peer
+      - Hostname: peer0
         SANS:
           - 192.168.1.2
           - 192.168.1.3
@@ -25,5 +25,6 @@ PeerOrgs:
 
     Template:
       Count: 4
+      Start: 1
     Users:
       Count: 0
