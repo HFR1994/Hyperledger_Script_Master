@@ -13,7 +13,7 @@ OrdererOrgs:
           - 192.168.1.4
 
 PeerOrgs:
-  - Name: Org1
+  - Name: Org1MSP
     Domain: org1.bc.cip
     EnableNodeOUs: true
     CA:
