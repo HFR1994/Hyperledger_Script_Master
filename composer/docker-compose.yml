@@ -21,7 +21,7 @@ services:
       - "7054:7054"
     command: sh -c 'fabric-ca-server start -c /etc/hyperledger/fabric-ca-server-config/fabric-ca-server-config.yaml --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.org1.bc.cip-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/$ORG1CAKEY -b admin:adminpw -d'
     volumes:
-      - .crypto-config/peerOrganizations/org1.bc.cip/ca/:/etc/hyperledger/fabric-ca-server-config
+      - ./crypto-config/peerOrganizations/org1.bc.cip/ca/:/etc/hyperledger/fabric-ca-server-config
       - ./CA-Replication/CA1/fabric-ca-server-config.yaml:/etc/hyperledger/fabric-ca-server-config/fabric-ca-server-config.yaml
     container_name: ca1.org1.bc.cip
     depends_on:
@@ -29,7 +29,7 @@ services:
     networks:
       - worker1
 
-  pg_master:
+  pg.masterbc.cip:
     build: ./CA-Replication/CA1/
     volumes:
       - pg_data:/var/lib/postgresql/data
@@ -39,6 +39,7 @@ services:
       - POSTGRES_DB=fabric
       - PG_REP_USER=rep_admin
       - PG_REP_PASSWORD=adminpw
+    container_name: pg.master.bc.cip
     ports:
       - "5432:5432"
     networks:
