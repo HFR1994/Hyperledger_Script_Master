@@ -16,5 +16,5 @@ ORG1CAKEY="$(ls ../../crypto-config/peerOrganizations/org1.bc.cip/ca/ | grep 'sk
 
 IMAGETAG="latest"
 
-ORG1CAKEY=$ORG1CAKEY IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/docker-compose-ca1.yml down
-ORG1CAKEY=$ORG1CAKEY IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/docker-compose-ca1.yml up -d
+ORG1CAKEY=$ORG1CAKEY IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/docker-compose-ca2.yml down
+ORG1CAKEY=$ORG1CAKEY IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/docker-compose-ca2.yml up -d
