@@ -23,9 +23,8 @@ services:
     depends_on:
       - pg_master
     networks:
-      default:
-        aliases:
-          - ca_network
+      - ca_network
+      - worker1
 
   pg_master:
     build: .
@@ -41,6 +40,5 @@ services:
       - "5432:5432"
     container_name: pg_master.org1.bc.cip
     networks:
-      default:
-        aliases:
-          - ca_network
+      - ca_network
+      - worker1
