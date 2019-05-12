@@ -187,6 +187,7 @@ Profiles:
                 Organizations:
                 - *Org1
     ModeKafkaChannel:
+        <<: *ChannelDefaults
         Consortium: InitialConsortium
         Application:
             <<: *ApplicationDefaults
