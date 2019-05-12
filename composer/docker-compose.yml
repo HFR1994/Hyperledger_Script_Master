@@ -25,11 +25,11 @@ services:
       - ./CA-Replication/CA1/fabric-ca-server-config.yaml:/etc/hyperledger/fabric-ca-server-config/fabric-ca-server-config.yaml
     container_name: ca1.org1.bc.cip
     depends_on:
-      - pg_master
+      - pg.master.bc.cip
     networks:
       - worker1
 
-  pg.masterbc.cip:
+  pg.master.bc.cip:
     build: ./CA-Replication/CA1/
     volumes:
       - pg_data:/var/lib/postgresql/data
