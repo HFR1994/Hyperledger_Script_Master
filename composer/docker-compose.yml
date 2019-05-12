@@ -1,5 +1,8 @@
 version: '2'
 
+networks:
+  worker1:
+
 services:
 
   orderer0.bc.cip:
@@ -34,6 +37,8 @@ services:
       - kafka1
       - kafka2
       - kafka3
+    networks:
+      - worker1
 
   peer0.org1.bc.cip:
     container_name: peer0.org1.bc.cip
@@ -49,6 +54,8 @@ services:
       - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/peer/msp
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb:5984
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
       - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org1.bc.cip:7051
       - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org1.bc.cip:7051
       - CORE_PEER_TLS_ENABLED=true
@@ -73,15 +80,19 @@ services:
     depends_on:
       - orderer0.bc.cip
       - couchdb
+    networks:
+      - worker1
 
   couchdb:
     container_name: couchdb
     image: hyperledger/fabric-couchdb:$IMAGETAG
     ports:
-      - 5984:5984
+      - "5984:5984"
     environment:
-      DB_URL: http://localhost:5984/member_db
-
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=adminpw
+    networks:
+      - worker1
 
   peer1.org1.bc.cip:
     container_name: peer1.org1.bc.cip
@@ -97,6 +108,8 @@ services:
       - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/peer/msp
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb1:5984
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
       - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org1.bc.cip:7051
       - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org1.bc.cip:7051
       - CORE_PEER_TLS_ENABLED=true
@@ -121,14 +134,19 @@ services:
     depends_on:
       - orderer0.bc.cip
       - couchdb1
+    networks:
+      - worker1
 
   couchdb1:
     container_name: couchdb1
     image: hyperledger/fabric-couchdb:$IMAGETAG
     ports:
-      - 6984:5984
+      - "6984:5984"
     environment:
-      DB_URL: http://localhost:6984/member_db
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=adminpw
+    networks:
+      - worker1
 
   zookeeper0:
     container_name: zookeeper0
@@ -142,6 +160,8 @@ services:
       - 2181:2181
       - '2888'
       - '3888'
+    networks:
+      - worker1
 
   kafka0:
     container_name: kafka0
@@ -161,6 +181,8 @@ services:
       - 9092:9092
     depends_on:
       - zookeeper0
+    networks:
+      - worker1
 
   kafka1:
     container_name: kafka1
@@ -180,6 +202,8 @@ services:
       - 10092:9092
     depends_on:
       - zookeeper0
+    networks:
+      - worker1
 
   kafka2:
     container_name: kafka2
@@ -199,6 +223,8 @@ services:
       - 11092:9092
     depends_on:
       - zookeeper0
+    networks:
+      - worker1
 
   kafka3:
     container_name: kafka3
@@ -218,3 +244,5 @@ services:
       - 12092:9092
     depends_on:
       - zookeeper0
+    networks:
+      - worker1
