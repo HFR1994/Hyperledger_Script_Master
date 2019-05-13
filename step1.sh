@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 export VERBOSE=false
+ARCH=`uname -m`
 
 function printHelp() {
   echo "Usage: "
@@ -31,12 +32,10 @@ function networkUp() {
     if [ -d "./material/crypto-config" ]; then
         # Grab the current directory
         DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
         #Replace Certificate Key
         ORG1CAKEY="$(ls ./material/crypto-config/peerOrganizations/org1.bc.cip/ca/ | grep 'sk$')"
         #Set IMAGETAG
         IMAGETAG="latest"
-
         ORG1CAKEY=$ORG1CAKEY IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/worker"${WORKER_NODE}"/docker-compose-step1.yml up -d
     else
         echo "No crypto material has been generated"
