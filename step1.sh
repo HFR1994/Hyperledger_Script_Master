@@ -37,7 +37,7 @@ function networkUp() {
         #Set IMAGETAG
         IMAGETAG="latest"
 
-        ORG1CAKEY=$ORG1CAKEY IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/Worker"${WORKER_NODE}"/docker-compose-step1.yml up -d
+        ORG1CAKEY=$ORG1CAKEY IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/worker"${WORKER_NODE}"/docker-compose-step1.yml up -d
     else
         echo "No crypto material has been generated"
     fi
