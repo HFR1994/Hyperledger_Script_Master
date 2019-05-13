@@ -5,13 +5,14 @@ ARCH=`uname -m`
 
 function printHelp() {
   echo "Usage: "
-  echo "  step1.sh <mode> [-w <worker_node>] [-v]"
+  echo "  step_execute.sh <mode> [-w <worker_node>] [-v]"
   echo "    <mode> - one of 'up', 'down'"
   echo "      - 'up' - bring up the network with docker-compose up"
   echo "      - 'down' - clear the network with docker-compose down"
   echo "    -w <worker_node> - Integer denotates Worker 1,2 or 3 (defaults to 1)"
+  echo "    -s <step> - Integer denotates step execution (defaults to 1)"
   echo "    -v - verbose mode"
-  echo "  step1.sh -h (print this message)"
+  echo "  step_execute.sh -h (print this message)"
   echo
   echo "Typically, one would first generate the required certificates and "
   echo "genesis block, then bring up the network."
@@ -24,6 +25,7 @@ OS_ARCH=$(echo "$(uname -s | tr '[:upper:]' '[:lower:]' | sed 's/mingw64_nt.*/wi
 # timeout duration - the duration the CLI should wait for a response from
 # another container before giving up
 WORKER_NODE=1
+STEP=1
 
 function networkUp() {
 
@@ -36,7 +38,7 @@ function networkUp() {
         ORG1CAKEY="$(ls ./material/crypto-config/peerOrganizations/org1.bc.cip/ca/ | grep 'sk$')"
         #Set IMAGETAG
         IMAGETAG="latest"
-        ORG1CAKEY=$ORG1CAKEY IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/worker"${WORKER_NODE}"/docker-compose-step1.yml up -d
+        ORG1CAKEY=$ORG1CAKEY IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/worker"${WORKER_NODE}"/docker-compose-step"${STEP}".yml up -d
     else
         echo "No crypto material has been generated"
     fi
@@ -56,7 +58,7 @@ function networkDown() {
         #Set IMAGETAG
         IMAGETAG="latest"
 
-        ORG1CAKEY=$ORG1CAKEY IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/worker"${WORKER_NODE}"/docker-compose-step1.yml down --rmi all -v
+        ORG1CAKEY=$ORG1CAKEY IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/worker"${WORKER_NODE}"/docker-compose-step"${STEP}".yml down --rmi all -v
     else
         echo "No crypto material has been generated"
     fi
@@ -78,7 +80,7 @@ else
   exit 1
 fi
 
-while getopts "h?w:v" opt; do
+while getopts "h?w:s:v" opt; do
   case "$opt" in
   h | \?)
     printHelp
@@ -86,6 +88,9 @@ while getopts "h?w:v" opt; do
     ;;
   w)
     WORKER_NODE=$OPTARG
+    ;;
+  s)
+    STEP=$OPTARG
     ;;
   v)
     VERBOSE=true

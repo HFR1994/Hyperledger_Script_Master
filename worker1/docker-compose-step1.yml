@@ -4,6 +4,7 @@ volumes:
   pg_data:
 
 networks:
+  ca_network:
   worker1:
 
 services:
@@ -27,6 +28,7 @@ services:
     depends_on:
       - pg.master.bc.cip
     networks:
+      - ca_network
       - worker1
 
   pg.master.bc.cip:
@@ -43,7 +45,7 @@ services:
     ports:
       - "5432:5432"
     networks:
-      - worker1
+      - ca_network
 
   zookeeper:
     container_name: zookeeper.bc.cip

@@ -1,8 +1,5 @@
 version: '2'
 
-volumes:
-  pg_data:
-
 networks:
   worker1:
 
@@ -26,20 +23,17 @@ services:
       - ORDERER_KAFKA_RETRY_SHORTINTERVAL=1s
       - ORDERER_KAFKA_RETRY_SHORTTOTAL=30s
       - ORDERER_KAFKA_VERBOSE=true
-      - CONFIGTX_ORDERER_KAFKA_BROKERS=[192.168.1.2:9092, 192.168.1.2:10092, 192.168.1.2:11092, 192.168.1.2:12092]
+      - CONFIGTX_ORDERER_KAFKA_BROKERS=[192.168.1.2:9092, 192.168.1.2:9092, 192.168.1.2:9092]
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
     command: orderer
     ports:
-      - 7050:7050
+      - "7050:7050"
     volumes:
-        - ./channel-artifacts/:/etc/hyperledger/configtx
-        - ./crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/msp:/etc/hyperledger/msp/orderer/msp
-        - ./crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/tls:/etc/hyperledger/tls/orderer/tls
+      - ./channel-artifacts/:/etc/hyperledger/configtx
+      - ./crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/msp:/etc/hyperledger/msp/orderer/msp
+      - ./crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/tls:/etc/hyperledger/tls/orderer/tls
     depends_on:
-      - kafka0
-      - kafka1
-      - kafka2
-      - kafka3
+      - kafka
     networks:
       - worker1
 
@@ -71,15 +65,15 @@ services:
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
     command: peer node start
     ports:
-      - 7051
-      - 7053
+      - "7051:7051"
+      - "7053:7053"
     volumes:
-        - /var/run/:/host/var/run/
-        - ./channel-artifacts/:/etc/hyperledger/configtx
-        - ./crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/msp:/etc/hyperledger/peer/msp
-        - ./crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/tls:/etc/hyperledger/peer/tls
-        - ./crypto-config/peerOrganizations/org1.bc.cip/users:/etc/hyperledger/msp/users
-        - ./crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/msp:/etc/hyperledger/msp/orderer/msp
+      - /var/run/:/host/var/run/
+      - ./channel-artifacts/:/etc/hyperledger/configtx
+      - ./crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/msp:/etc/hyperledger/peer/msp
+      - ./crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/tls:/etc/hyperledger/peer/tls
+      - ./crypto-config/peerOrganizations/org1.bc.cip/users:/etc/hyperledger/msp/users
+      - ./crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/msp:/etc/hyperledger/msp/orderer/msp
     depends_on:
       - orderer0.bc.cip
       - couchdb
@@ -127,12 +121,12 @@ services:
       - 8051:7051
       - 8053:7053
     volumes:
-        - /var/run/:/host/var/run/
-        - ./channel-artifacts/:/etc/hyperledger/configtx
-        - ./crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/msp:/etc/hyperledger/peer/msp
-        - ./crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/tls:/etc/hyperledger/peer/tls
-        - ./crypto-config/peerOrganizations/org1.bc.cip/users:/etc/hyperledger/msp/users
-        - ./crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/msp:/etc/hyperledger/msp/orderer/msp
+      - /var/run/:/host/var/run/
+      - ./channel-artifacts/:/etc/hyperledger/configtx
+      - ./crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/msp:/etc/hyperledger/peer/msp
+      - ./crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/tls:/etc/hyperledger/peer/tls
+      - ./crypto-config/peerOrganizations/org1.bc.cip/users:/etc/hyperledger/msp/users
+      - ./crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/msp:/etc/hyperledger/msp/orderer/msp
     depends_on:
       - orderer0.bc.cip
       - couchdb1
@@ -157,7 +151,7 @@ services:
     restart: always
     environment:
       - KAFKA_MESSAGE_MAX_BYTES=103809024
-      - KAFKA_REPLICA_FETCH_MAX_BYTES=103809024 
+      - KAFKA_REPLICA_FETCH_MAX_BYTES=103809024
       - KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE=false
       - KAFKA_BROKER_ID=0
       - KAFKA_MIN_INSYNC_REPLICAS=1
