@@ -29,7 +29,7 @@ services:
       - worker2
 
   pg.slave.bc.cip:
-    build: .
+    build: ../material/CA-Replication/CA2/
     environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=adminpw
