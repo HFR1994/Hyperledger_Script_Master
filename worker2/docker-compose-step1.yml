@@ -20,7 +20,7 @@ services:
     command: sh -c 'sleep 30 && fabric-ca-server start -c /etc/hyperledger/fabric-ca-server-config/fabric-ca-server-config.yaml --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.org1.bc.cip-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/$ORG1CAKEY -b admin:adminpw -d'
     volumes:
       - ../material/crypto-config/peerOrganizations/org1.bc.cip/ca/:/etc/hyperledger/fabric-ca-server-config
-      - ../material/CA-Replication/CA1/fabric-ca-server-config.yaml:/etc/hyperledger/fabric-ca-server-config/fabric-ca-server-config.yaml
+      - ../material/CA-Replication/CA2/fabric-ca-server-config.yaml:/etc/hyperledger/fabric-ca-server-config/fabric-ca-server-config.yaml
     container_name: ca.org1.bc.cip
     depends_on:
       - pg.slave.bc.cip
