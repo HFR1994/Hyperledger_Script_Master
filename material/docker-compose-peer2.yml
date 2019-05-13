@@ -127,9 +127,21 @@ services:
     environment:
       DB_URL: http://localhost:8984/member_db
 
-  kafka4:
+  zookeeper:
+    container_name: zookeeper1
+    # image: tmeister/zookeeper:latest
+    image: hyperledger/fabric-zookeeper
+    restart: always
+    environment:
+      - ZOO_MY_ID=2
+      - ZOO_SERVERS=server.1=192.168.1.2:2888:3888 server.2=zookeeper1:2888:3888 server.3=192.168.1.4:2888:3888
+    ports:
+      - 2181
+      - 2888
+      - 3888
+
+  kafka:
     container_name: kafka4
-    # image: wurstmeister/kafka:latest
     image: hyperledger/fabric-kafka
     restart: always
     environment:
@@ -140,78 +152,8 @@ services:
       - KAFKA_MIN_INSYNC_REPLICAS=2
       - KAFKA_DEFAULT_REPLICATION_FACTOR=3
       - KAFKA_LOG_RETENTION_MS=-1
-      - KAFKA_ZOOKEEPER_CONNECT=192.168.1.2:2181,192.168.1.3:3181,192.168.1.4:4181
+      - KAFKA_ZOOKEEPER_CONNECT=192.168.1.2:2181,192.168.1.3:2181,192.168.1.4:2181
     ports:
       - 9092:9092
     depends_on:
-      - zookeeper1
-
-  kafka5:
-    container_name: kafka5
-    # image: wurstmeister/kafka:latest
-    image: hyperledger/fabric-kafka
-    restart: always
-    environment:
-      - KAFKA_MESSAGE_MAX_BYTES=103809024
-      - KAFKA_REPLICA_FETCH_MAX_BYTES=103809024
-      - KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE=false
-      - KAFKA_BROKER_ID=5
-      - KAFKA_MIN_INSYNC_REPLICAS=2
-      - KAFKA_DEFAULT_REPLICATION_FACTOR=3
-      - KAFKA_LOG_RETENTION_MS=-1
-      - KAFKA_ZOOKEEPER_CONNECT=192.168.1.2:2181,192.168.1.3:3181,192.168.1.4:4181
-    ports:
-      - 10092:9092
-    depends_on:
-      - zookeeper1
-
-  kafka6:
-    container_name: kafka6
-    # image: wurstmeister/kafka:latest
-    image: hyperledger/fabric-kafka
-    restart: always
-    environment:
-      - KAFKA_MESSAGE_MAX_BYTES=103809024
-      - KAFKA_REPLICA_FETCH_MAX_BYTES=103809024
-      - KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE=false
-      - KAFKA_BROKER_ID=6
-      - KAFKA_MIN_INSYNC_REPLICAS=2
-      - KAFKA_DEFAULT_REPLICATION_FACTOR=3
-      - KAFKA_LOG_RETENTION_MS=-1
-      - KAFKA_ZOOKEEPER_CONNECT=192.168.1.2:2181,192.168.1.3:3181,192.168.1.4:4181
-    ports:
-      - 11092:9092
-    depends_on:
-      - zookeeper1
-
-  kafka7:
-    container_name: kafka7
-    # image: wurstmeister/kafka:latest
-    image: hyperledger/fabric-kafka
-    restart: always
-    environment:
-      - KAFKA_MESSAGE_MAX_BYTES=103809024
-      - KAFKA_REPLICA_FETCH_MAX_BYTES=103809024
-      - KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE=false
-      - KAFKA_BROKER_ID=7
-      - KAFKA_MIN_INSYNC_REPLICAS=2
-      - KAFKA_DEFAULT_REPLICATION_FACTOR=3
-      - KAFKA_LOG_RETENTION_MS=-1
-      - KAFKA_ZOOKEEPER_CONNECT=192.168.1.2:2181,192.168.1.3:3181,192.168.1.4:4181
-    ports:
-      - 12092:9092
-    depends_on:
-      - zookeeper1
-
-  zookeeper1:
-    container_name: zookeeper1
-    # image: tmeister/zookeeper:latest
-    image: hyperledger/fabric-zookeeper
-    restart: always
-    environment:
-      - ZOO_MY_ID=2
-      - ZOO_SERVERS=server.1=192.168.1.2:2888:3888 server.2=zookeeper1:2888:3888 server.3=192.168.1.4:2888:3888
-    ports:
-      - 3181:2181
-      - '2888'
-      - '3888'
+      - zookeeper

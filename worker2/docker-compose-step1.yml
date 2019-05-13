@@ -1,6 +1,11 @@
-version: "3"
+version: '2'
+
+networks:
+  ca_network:
+  worker2:
 
 services:
+
   ca.org1.bc.cip:
     image: hyperledger/fabric-ca:$IMAGETAG
     environment:
@@ -11,20 +16,19 @@ services:
       - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/$ORG1CAKEY
       - REP_HOST=192.168.1.2
     ports:
-      - "7054:7054"
+      - 7054
     command: sh -c 'fabric-ca-server start -c /etc/hyperledger/fabric-ca-server-config/fabric-ca-server-config.yaml --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.org1.bc.cip-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/$ORG1CAKEY -b admin:adminpw -d'
     volumes:
-      - ../../crypto-config/peerOrganizations/org1.bc.cip/ca/:/etc/hyperledger/fabric-ca-server-config
-      - ./fabric-ca-server-config.yaml:/etc/hyperledger/fabric-ca-server-config/fabric-ca-server-config.yaml
-    container_name: ca2.org1.bc.cip
+      - ../material/crypto-config/peerOrganizations/org1.bc.cip/ca/:/etc/hyperledger/fabric-ca-server-config
+      - ../material/CA-Replication/CA1/fabric-ca-server-config.yaml:/etc/hyperledger/fabric-ca-server-config/fabric-ca-server-config.yaml
+    container_name: ca.org1.bc.cip
     depends_on:
-      - pg_slave
+      - pg.slave.bc.cip
     networks:
-      default:
-        aliases:
-          - ca_network
+      - ca_network
+      - worker2
 
-  pg_slave:
+  pg.slave.bc.cip:
     build: .
     environment:
       - POSTGRES_USER=admin
@@ -33,10 +37,23 @@ services:
       - PG_REP_USER=rep_admin
       - PG_REP_PASSWORD=adminpw
       - PG_REP_HOST=192.168.1.2
-    ports:
-      - "5432:5432"
     container_name: pg_slave.org1.bc.cip
+    ports:
+      - 5432
     networks:
-      default:
-        aliases:
-          - ca_network
+      - ca_network
+
+  zookeeper:
+    container_name: zookeeper.bc.cip
+    # image: tmeister/zookeeper:latest
+    image: hyperledger/fabric-zookeeper
+    restart: always
+    environment:
+      - ZOO_MY_ID=2
+      - ZOO_SERVERS=server.1=192.168.1.2:2888:3888 server.2=zookeeper:2888:3888 server.3=192.168.1.4:2888:3888
+    ports:
+      - 2181
+      - 2888
+      - 3888
+    networks:
+      - worker2

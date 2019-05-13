@@ -1,0 +1,64 @@
+version: '3'
+
+networks:
+  worker1:
+
+volumes:
+  pg_data:
+
+services:
+
+  ca.org1.bc.cip:
+    image: hyperledger/fabric-ca:$IMAGETAG
+    environment:
+      - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+      - FABRIC_CA_SERVER_CA_NAME=ca.org1.bc.cip
+      - FABRIC_CA_SERVER_TLS_ENABLED=true
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org1.bc.cip-cert.pem
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/$ORG1CAKEY
+      - REP_HOST=localhost
+    ports:
+      - "7054:7054"
+    command: sh -c 'fabric-ca-server start -c /etc/hyperledger/fabric-ca-server-config/fabric-ca-server-config.yaml --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.org1.bc.cip-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/$ORG1CAKEY -b admin:adminpw -d'
+    volumes:
+      - ../material/crypto-config/peerOrganizations/org1.bc.cip/ca/:/etc/hyperledger/fabric-ca-server-config
+      - ../material/CA-Replication/CA1/fabric-ca-server-config.yaml:/etc/hyperledger/fabric-ca-server-config/fabric-ca-server-config.yaml
+    container_name: ca.org1.bc.cip
+    depends_on:
+      - pg.master.bc.cip
+      - zookeeper
+    networks:
+      - worker1
+
+  pg.master.bc.cip:
+    build: ../material/CA-Replication/CA1/
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=adminpw
+      - POSTGRES_DB=fabric
+      - PG_REP_USER=rep_admin
+      - PG_REP_PASSWORD=adminpw
+    container_name: pg.master.bc.cip
+    ports:
+      - "5432:5432"
+    networks:
+      - worker1
+
+  zookeeper:
+    container_name: zookeeper.bc.cip
+    # image: tmeister/zookeeper:latest
+    image: hyperledger/fabric-zookeeper
+    restart: always
+    environment:
+      - ZOO_MY_ID=1
+      - ZOO_SERVERS=server.1=zookeeper:2888:3888 server.2=192.168.1.3:2888:3888 server.3=192.168.1.4:2888:3888
+    ports:
+      - "2181:2181"
+      - "2888:2888"
+      - "3888:3888"
+    networks:
+      - worker1
+    depends_on:
+      - pg.master.bc.cip

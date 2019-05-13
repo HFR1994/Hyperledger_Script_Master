@@ -2,8 +2,138 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a1869e4-d1b9-41c0-87c6-ee12d1ee45c6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/composer/CA-Replication/CA2/startCA2.sh" beforeDir="false" afterPath="$PROJECT_DIR$/composer/CA-Replication/CA2/startCA2.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/composer/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step1.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worker1/docker-compose-step1.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worker2/docker-compose-step1.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/CA-Replication/CA1/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/material/CA-Replication/CA1/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/CA-Replication/CA1/fabric-ca-server-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/material/CA-Replication/CA1/fabric-ca-server-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/CA-Replication/CA1/setup-master.sh" beforeDir="false" afterPath="$PROJECT_DIR$/material/CA-Replication/CA1/setup-master.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/CA-Replication/CA2/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/material/CA-Replication/CA2/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/CA-Replication/CA2/docker-compose-ca2.yml" beforeDir="false" afterPath="$PROJECT_DIR$/worker3/docker-compose-step1.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/CA-Replication/CA2/docker-entrypoint.sh" beforeDir="false" afterPath="$PROJECT_DIR$/material/CA-Replication/CA2/docker-entrypoint.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/CA-Replication/CA2/fabric-ca-server-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/material/CA-Replication/CA2/fabric-ca-server-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/CA-Replication/CA2/gosu" beforeDir="false" afterPath="$PROJECT_DIR$/material/CA-Replication/CA2/gosu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/CA-Replication/CA2/startCA2.sh" beforeDir="false" afterPath="$PROJECT_DIR$/material/CA-Replication/CA2/startCA2.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/channel-artifacts/Org1MSPanchors.tx" beforeDir="false" afterPath="$PROJECT_DIR$/material/channel-artifacts/Org1MSPanchors.tx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/channel-artifacts/channel.tx" beforeDir="false" afterPath="$PROJECT_DIR$/material/channel-artifacts/channel.tx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/channel-artifacts/genesis.block" beforeDir="false" afterPath="$PROJECT_DIR$/material/channel-artifacts/genesis.block" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/configtx.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/material/configtx.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/ca/231b66adc41257daa523b32b763c21e3a52a8cb4ca268bfd0cb4231ffcc3eedf_sk" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/ca/231b66adc41257daa523b32b763c21e3a52a8cb4ca268bfd0cb4231ffcc3eedf_sk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/ca/ca.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/ca/ca.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/msp/admincerts/Admin@bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/msp/admincerts/Admin@bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/msp/cacerts/ca.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/msp/cacerts/ca.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/msp/tlscacerts/tlsca.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/msp/tlscacerts/tlsca.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/msp/admincerts/Admin@bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/msp/admincerts/Admin@bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/msp/cacerts/ca.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/msp/cacerts/ca.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/msp/keystore/f69e76522181c38b1323805272e866f5d6b9449696eb2f955243d61874986398_sk" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/msp/keystore/f69e76522181c38b1323805272e866f5d6b9449696eb2f955243d61874986398_sk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/msp/signcerts/orderer0.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/msp/signcerts/orderer0.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/msp/tlscacerts/tlsca.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/msp/tlscacerts/tlsca.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/tls/ca.crt" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/tls/ca.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/tls/server.crt" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/tls/server.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/tls/server.key" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer0.bc.cip/tls/server.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer1.bc.cip/msp/admincerts/Admin@bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer1.bc.cip/msp/admincerts/Admin@bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer1.bc.cip/msp/cacerts/ca.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer1.bc.cip/msp/cacerts/ca.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer1.bc.cip/msp/keystore/0cafd7d0620ad53c6abb0006a49d992e479469bf03e7b478b0e2faf0506be0ea_sk" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer1.bc.cip/msp/keystore/0cafd7d0620ad53c6abb0006a49d992e479469bf03e7b478b0e2faf0506be0ea_sk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer1.bc.cip/msp/signcerts/orderer1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer1.bc.cip/msp/signcerts/orderer1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer1.bc.cip/msp/tlscacerts/tlsca.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer1.bc.cip/msp/tlscacerts/tlsca.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer1.bc.cip/tls/ca.crt" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer1.bc.cip/tls/ca.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer1.bc.cip/tls/server.crt" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer1.bc.cip/tls/server.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer1.bc.cip/tls/server.key" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer1.bc.cip/tls/server.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/msp/admincerts/Admin@bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/msp/admincerts/Admin@bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/msp/cacerts/ca.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/msp/cacerts/ca.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/msp/keystore/3a3a0dbae16fe29b67656e43d93209e89bab1531dcfe4953aefd3c0b5607b924_sk" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/msp/keystore/3a3a0dbae16fe29b67656e43d93209e89bab1531dcfe4953aefd3c0b5607b924_sk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/msp/signcerts/orderer2.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/msp/signcerts/orderer2.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/msp/tlscacerts/tlsca.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/msp/tlscacerts/tlsca.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/tls/ca.crt" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/tls/ca.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/tls/server.crt" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/tls/server.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/tls/server.key" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/tls/server.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/tlsca/18b8997f48cdb1a8f0ce398d11dfdef58c68289f0f2942c4d49f854220488c13_sk" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/tlsca/18b8997f48cdb1a8f0ce398d11dfdef58c68289f0f2942c4d49f854220488c13_sk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/tlsca/tlsca.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/tlsca/tlsca.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/users/Admin@bc.cip/msp/admincerts/Admin@bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/users/Admin@bc.cip/msp/admincerts/Admin@bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/users/Admin@bc.cip/msp/cacerts/ca.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/users/Admin@bc.cip/msp/cacerts/ca.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/users/Admin@bc.cip/msp/keystore/5e4d92dcc5ef975dc2386f80aed5550442459e48e751bf043c6e706311a66275_sk" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/users/Admin@bc.cip/msp/keystore/5e4d92dcc5ef975dc2386f80aed5550442459e48e751bf043c6e706311a66275_sk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/users/Admin@bc.cip/msp/signcerts/Admin@bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/users/Admin@bc.cip/msp/signcerts/Admin@bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/users/Admin@bc.cip/msp/tlscacerts/tlsca.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/users/Admin@bc.cip/msp/tlscacerts/tlsca.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/users/Admin@bc.cip/tls/ca.crt" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/users/Admin@bc.cip/tls/ca.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/users/Admin@bc.cip/tls/client.crt" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/users/Admin@bc.cip/tls/client.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/ordererOrganizations/bc.cip/users/Admin@bc.cip/tls/client.key" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/ordererOrganizations/bc.cip/users/Admin@bc.cip/tls/client.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/ca/ca.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/ca/ca.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/ca/cdc1e7aad0f0910bbee159bdd111585ac57970b5504e4852842c0b5f84f29a4e_sk" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/ca/cdc1e7aad0f0910bbee159bdd111585ac57970b5504e4852842c0b5f84f29a4e_sk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/msp/admincerts/Admin@org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/msp/admincerts/Admin@org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/msp/cacerts/ca.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/msp/cacerts/ca.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/msp/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/msp/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/msp/tlscacerts/tlsca.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/msp/tlscacerts/tlsca.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/msp/admincerts/Admin@org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/msp/admincerts/Admin@org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/msp/cacerts/ca.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/msp/cacerts/ca.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/msp/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/msp/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/msp/keystore/0b094f52aca3b8b75294e5778b99ea80dce651817c2f67cdb22be250e5a9ccd5_sk" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/msp/keystore/0b094f52aca3b8b75294e5778b99ea80dce651817c2f67cdb22be250e5a9ccd5_sk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/msp/signcerts/peer0.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/msp/signcerts/peer0.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/msp/tlscacerts/tlsca.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/msp/tlscacerts/tlsca.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/tls/ca.crt" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/tls/ca.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/tls/server.crt" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/tls/server.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/tls/server.key" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/tls/server.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/msp/admincerts/Admin@org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/msp/admincerts/Admin@org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/msp/cacerts/ca.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/msp/cacerts/ca.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/msp/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/msp/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/msp/keystore/1bb7dbba2cebf970ac48c5acb0c8658ad61c13306197e3c1f644e4349a9587fc_sk" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/msp/keystore/1bb7dbba2cebf970ac48c5acb0c8658ad61c13306197e3c1f644e4349a9587fc_sk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/msp/signcerts/peer1.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/msp/signcerts/peer1.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/msp/tlscacerts/tlsca.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/msp/tlscacerts/tlsca.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/tls/ca.crt" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/tls/ca.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/tls/server.crt" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/tls/server.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/tls/server.key" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/tls/server.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/msp/admincerts/Admin@org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/msp/admincerts/Admin@org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/msp/cacerts/ca.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/msp/cacerts/ca.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/msp/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/msp/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/msp/keystore/ca13a964c93cf846c88cb81ced622ed96c19b98156d3f9fafdfb1704fb0c6089_sk" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/msp/keystore/ca13a964c93cf846c88cb81ced622ed96c19b98156d3f9fafdfb1704fb0c6089_sk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/msp/signcerts/peer2.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/msp/signcerts/peer2.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/msp/tlscacerts/tlsca.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/msp/tlscacerts/tlsca.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/tls/ca.crt" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/tls/ca.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/tls/server.crt" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/tls/server.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/tls/server.key" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/tls/server.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer3.org1.bc.cip/msp/admincerts/Admin@org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer3.org1.bc.cip/msp/admincerts/Admin@org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer3.org1.bc.cip/msp/cacerts/ca.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer3.org1.bc.cip/msp/cacerts/ca.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer3.org1.bc.cip/msp/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer3.org1.bc.cip/msp/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer3.org1.bc.cip/msp/keystore/f5271b8519872a15a276616a297c36d1116f6d01456a78b12a0e69cdaf975a87_sk" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer3.org1.bc.cip/msp/keystore/f5271b8519872a15a276616a297c36d1116f6d01456a78b12a0e69cdaf975a87_sk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer3.org1.bc.cip/msp/signcerts/peer3.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer3.org1.bc.cip/msp/signcerts/peer3.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer3.org1.bc.cip/msp/tlscacerts/tlsca.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer3.org1.bc.cip/msp/tlscacerts/tlsca.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer3.org1.bc.cip/tls/ca.crt" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer3.org1.bc.cip/tls/ca.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer3.org1.bc.cip/tls/server.crt" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer3.org1.bc.cip/tls/server.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer3.org1.bc.cip/tls/server.key" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer3.org1.bc.cip/tls/server.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer4.org1.bc.cip/msp/admincerts/Admin@org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer4.org1.bc.cip/msp/admincerts/Admin@org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer4.org1.bc.cip/msp/cacerts/ca.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer4.org1.bc.cip/msp/cacerts/ca.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer4.org1.bc.cip/msp/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer4.org1.bc.cip/msp/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer4.org1.bc.cip/msp/keystore/055b1447fa48fd79949eecde4e4fca3a7cd32d25e8ad85824464996ddf330673_sk" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer4.org1.bc.cip/msp/keystore/055b1447fa48fd79949eecde4e4fca3a7cd32d25e8ad85824464996ddf330673_sk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer4.org1.bc.cip/msp/signcerts/peer4.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer4.org1.bc.cip/msp/signcerts/peer4.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer4.org1.bc.cip/msp/tlscacerts/tlsca.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer4.org1.bc.cip/msp/tlscacerts/tlsca.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer4.org1.bc.cip/tls/ca.crt" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer4.org1.bc.cip/tls/ca.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer4.org1.bc.cip/tls/server.crt" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer4.org1.bc.cip/tls/server.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer4.org1.bc.cip/tls/server.key" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer4.org1.bc.cip/tls/server.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/tlsca/b1f9a0e79ed493b6df26a9a26301361a9629c9c3465a64ff0fa719a20a5f5195_sk" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/tlsca/b1f9a0e79ed493b6df26a9a26301361a9629c9c3465a64ff0fa719a20a5f5195_sk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/tlsca/tlsca.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/tlsca/tlsca.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/users/Admin@org1.bc.cip/msp/admincerts/Admin@org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/users/Admin@org1.bc.cip/msp/admincerts/Admin@org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/users/Admin@org1.bc.cip/msp/cacerts/ca.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/users/Admin@org1.bc.cip/msp/cacerts/ca.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/users/Admin@org1.bc.cip/msp/keystore/80be40889bdee80cf215cc141d99db9e6593644e3c97113bc50f80b359e06586_sk" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/users/Admin@org1.bc.cip/msp/keystore/80be40889bdee80cf215cc141d99db9e6593644e3c97113bc50f80b359e06586_sk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/users/Admin@org1.bc.cip/msp/signcerts/Admin@org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/users/Admin@org1.bc.cip/msp/signcerts/Admin@org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/users/Admin@org1.bc.cip/msp/tlscacerts/tlsca.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/users/Admin@org1.bc.cip/msp/tlscacerts/tlsca.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/users/Admin@org1.bc.cip/tls/ca.crt" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/users/Admin@org1.bc.cip/tls/ca.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/users/Admin@org1.bc.cip/tls/client.crt" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/users/Admin@org1.bc.cip/tls/client.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/users/Admin@org1.bc.cip/tls/client.key" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/users/Admin@org1.bc.cip/tls/client.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/users/User1@org1.bc.cip/msp/admincerts/User1@org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/users/User1@org1.bc.cip/msp/admincerts/User1@org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/users/User1@org1.bc.cip/msp/cacerts/ca.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/users/User1@org1.bc.cip/msp/cacerts/ca.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/users/User1@org1.bc.cip/msp/keystore/1e93c51752338ce3fe15afbb0c3c8b31ee7afde6d8d07cbe5e23a9888f318150_sk" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/users/User1@org1.bc.cip/msp/keystore/1e93c51752338ce3fe15afbb0c3c8b31ee7afde6d8d07cbe5e23a9888f318150_sk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/users/User1@org1.bc.cip/msp/signcerts/User1@org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/users/User1@org1.bc.cip/msp/signcerts/User1@org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/users/User1@org1.bc.cip/msp/tlscacerts/tlsca.org1.bc.cip-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/users/User1@org1.bc.cip/msp/tlscacerts/tlsca.org1.bc.cip-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/users/User1@org1.bc.cip/tls/ca.crt" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/users/User1@org1.bc.cip/tls/ca.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/users/User1@org1.bc.cip/tls/client.crt" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/users/User1@org1.bc.cip/tls/client.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/users/User1@org1.bc.cip/tls/client.key" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/users/User1@org1.bc.cip/tls/client.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/docker-compose-peer2.yml" beforeDir="false" afterPath="$PROJECT_DIR$/material/docker-compose-peer2.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/docker-compose-peer3.yml" beforeDir="false" afterPath="$PROJECT_DIR$/material/docker-compose-peer3.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/material/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer/howtobuild.sh" beforeDir="false" afterPath="$PROJECT_DIR$/material/howtobuild.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startFabric.sh" beforeDir="false" afterPath="$PROJECT_DIR$/startFabric.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stopFabric.sh" beforeDir="false" afterPath="$PROJECT_DIR$/stopFabric.sh" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,65 +146,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composer/crypto-config.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composer/docker-compose.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="85" column="21" selection-start-line="85" selection-start-column="21" selection-end-line="85" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/startFabric-Peer2.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/startFabric.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="31" selection-start-line="24" selection-end-line="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA2/startCA2.sh">
+        <entry file="file://$PROJECT_DIR$/worker1/docker-compose-step1.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="19" column="96" selection-start-line="19" selection-start-column="96" selection-end-line="19" selection-end-column="96" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stopFabric.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composer/configtx.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="128" selection-start-line="128" selection-end-line="131" selection-end-column="26" />
+            <state relative-caret-position="73">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -83,9 +159,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>datasource</find>
-      <find>fabric-ca-server-config</find>
-      <find>exam</find>
       <find>example</find>
       <find>channel create</find>
       <find>5984</find>
@@ -112,7 +185,10 @@
       <find>role</find>
       <find>default</find>
       <find>tools</find>
+      <find>GOSSIP_EXTE</find>
       <find>fabric-too</find>
+      <find>NETWORKMO</find>
+      <find>material</find>
     </findStrings>
     <replaceStrings>
       <replace>biz.cp</replace>
@@ -124,8 +200,8 @@
       <replace>3</replace>
     </replaceStrings>
     <dirStrings>
-      <dir>$PROJECT_DIR$/composer</dir>
       <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/composer</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -152,7 +228,6 @@
         <option value="$PROJECT_DIR$/fabric-ca-server-config.yaml" />
         <option value="$PROJECT_DIR$/startFabric-Peer3.sh" />
         <option value="$PROJECT_DIR$/startFabric-Peer2.sh" />
-        <option value="$PROJECT_DIR$/composer/docker-compose-peer2.yml" />
         <option value="$PROJECT_DIR$/composer/fabric-ca-server-config.yaml" />
         <option value="$PROJECT_DIR$/composer/CA-Replication/CA2/fabric-ca-server-config.yaml" />
         <option value="$PROJECT_DIR$/composer/docker-compose-peer3.yml" />
@@ -160,16 +235,25 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/composer/howtobuild.sh" />
-        <option value="$PROJECT_DIR$/composer/CA-Replication/CA2/docker-compose-ca2.yml" />
         <option value="$PROJECT_DIR$/composer/CA-Replication/CA1/startCA1.sh" />
         <option value="$PROJECT_DIR$/composer/CA-Replication/CA1/docker-compose-ca1.yml" />
         <option value="$PROJECT_DIR$/startFabric.sh" />
         <option value="$PROJECT_DIR$/composer/configtx.yaml" />
         <option value="$PROJECT_DIR$/composer/CA-Replication/CA1/fabric-ca-server-config.yaml" />
-        <option value="$PROJECT_DIR$/stopFabric.sh" />
         <option value="$PROJECT_DIR$/composer/crypto-config.yaml" />
-        <option value="$PROJECT_DIR$/composer/docker-compose.yml" />
         <option value="$PROJECT_DIR$/composer/CA-Replication/CA2/startCA2.sh" />
+        <option value="$PROJECT_DIR$/composer/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/Worker1/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/composer/docker-compose-peer2.yml" />
+        <option value="$PROJECT_DIR$/composer/CA-Replication/CA2/docker-compose-ca2.yml" />
+        <option value="$PROJECT_DIR$/Worker2/docker-compose-step1.yml" />
+        <option value="$PROJECT_DIR$/Worker3/docker-compose-step1.yml" />
+        <option value="$PROJECT_DIR$/stopFabric.sh" />
+        <option value="$PROJECT_DIR$/step1.sh" />
+        <option value="$PROJECT_DIR$/material/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/Worker1/docker-compose-step1.yml" />
+        <option value="$PROJECT_DIR$/material/CA-Replication/CA1/fabric-ca-server-config.yaml" />
+        <option value="$PROJECT_DIR$/worker1/docker-compose-step1.yml" />
       </list>
     </option>
   </component>
@@ -194,20 +278,42 @@
             <path>
               <item name="Hyperledger_Script_Maker" type="b2602c69:ProjectViewProjectNode" />
               <item name="Hyperledger_Script_Maker" type="462c0819:PsiDirectoryNode" />
-              <item name="composer" type="462c0819:PsiDirectoryNode" />
+              <item name="material" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Hyperledger_Script_Maker" type="b2602c69:ProjectViewProjectNode" />
               <item name="Hyperledger_Script_Maker" type="462c0819:PsiDirectoryNode" />
-              <item name="composer" type="462c0819:PsiDirectoryNode" />
+              <item name="material" type="462c0819:PsiDirectoryNode" />
               <item name="CA-Replication" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Hyperledger_Script_Maker" type="b2602c69:ProjectViewProjectNode" />
               <item name="Hyperledger_Script_Maker" type="462c0819:PsiDirectoryNode" />
-              <item name="composer" type="462c0819:PsiDirectoryNode" />
+              <item name="material" type="462c0819:PsiDirectoryNode" />
+              <item name="CA-Replication" type="462c0819:PsiDirectoryNode" />
+              <item name="CA1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Hyperledger_Script_Maker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Hyperledger_Script_Maker" type="462c0819:PsiDirectoryNode" />
+              <item name="material" type="462c0819:PsiDirectoryNode" />
               <item name="CA-Replication" type="462c0819:PsiDirectoryNode" />
               <item name="CA2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Hyperledger_Script_Maker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Hyperledger_Script_Maker" type="462c0819:PsiDirectoryNode" />
+              <item name="worker1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Hyperledger_Script_Maker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Hyperledger_Script_Maker" type="462c0819:PsiDirectoryNode" />
+              <item name="worker2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Hyperledger_Script_Maker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Hyperledger_Script_Maker" type="462c0819:PsiDirectoryNode" />
+              <item name="worker3" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -222,15 +328,18 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Worker1" />
+      <recent name="$PROJECT_DIR$/Worker3" />
+      <recent name="$PROJECT_DIR$/Worker2" />
+      <recent name="$PROJECT_DIR$/composer/CA-Replication/CA2" />
+      <recent name="$PROJECT_DIR$/composer/CA-Replication/CA1" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/composer" />
       <recent name="$PROJECT_DIR$/composer/CA-Replication/CA2" />
       <recent name="$PROJECT_DIR$/composer/CA-Replication/CA1" />
       <recent name="$PROJECT_DIR$/composer/CA-Replication" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/composer/CA-Replication/CA2" />
-      <recent name="$PROJECT_DIR$/composer/CA-Replication/CA1" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -301,22 +410,22 @@
       <updated>1557380404419</updated>
       <workItem from="1557380405725" duration="12580000" />
       <workItem from="1557517383750" duration="1638000" />
-      <workItem from="1557539887223" duration="22111000" />
+      <workItem from="1557539887223" duration="30235000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48535000" />
+    <option name="totallyTimeSpent" value="56659000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33121917" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33121917" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.55526656" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.55396616" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32769832" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -393,17 +502,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/composer/docker-compose-peer2.yml-e">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer/.!25797!docker-compose.yml" />
-    <entry file="file://$PROJECT_DIR$/composer/file.txt" />
-    <entry file="file://$PROJECT_DIR$/config-all/bootstrap.py" />
-    <entry file="file://$PROJECT_DIR$/config-all/howtobuild.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-534" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config-all/peeradmincard.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -425,14 +523,14 @@
     <entry file="file://$USER_HOME$/Downloads/FUR02799409.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA2/Dockerfile">
+    <entry file="file://$PROJECT_DIR$/material/CA-Replication/CA2/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA2/docker-entrypoint.sh">
+    <entry file="file://$PROJECT_DIR$/material/CA-Replication/CA2/docker-entrypoint.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
@@ -445,25 +543,18 @@
     <entry file="file://$PROJECT_DIR$/createPeerAdminCard.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer/docker-compose-peer3.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA1/setup-master.sh">
+    <entry file="file://$PROJECT_DIR$/material/CA-Replication/CA1/setup-master.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/ca/ca.org1.bc.cip-cert.pem">
+    <entry file="file://$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/ca/ca.org1.bc.cip-cert.pem">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/composer/fabric-ca-server-config.yaml" />
-    <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA2/fabric-ca-server-config.yaml">
+    <entry file="file://$PROJECT_DIR$/material/CA-Replication/CA2/fabric-ca-server-config.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
           <caret line="156" column="30" selection-start-line="156" selection-start-column="30" selection-end-line="156" selection-end-column="30" />
@@ -483,13 +574,6 @@
     <entry file="file://$PROJECT_DIR$/composer/docker-compose-peer3.yml-e">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-35" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer/docker-compose-peer2.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="114" column="65" lean-forward="true" selection-start-line="114" selection-start-column="65" selection-end-line="114" selection-end-column="65" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer/configtx.yaml-e">
@@ -524,33 +608,19 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA2/docker-compose-ca2.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="14" column="259" selection-start-line="14" selection-start-column="259" selection-end-line="14" selection-end-column="259" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA1/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="32" lean-forward="true" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/msp/config.yaml">
+    <entry file="file://$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer0.org1.bc.cip/msp/config.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/msp/config.yaml">
+    <entry file="file://$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/msp/config.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/msp/config.yaml">
+    <entry file="file://$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/msp/config.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/msp/config.yaml">
+    <entry file="file://$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/msp/config.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/msp/admincerts/Admin@org1.bc.cip-cert.pem">
+    <entry file="file://$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/msp/admincerts/Admin@org1.bc.cip-cert.pem">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/composer/crypto-config/peerOrganizations/org1.bc.cip/ca/fabric-ca-server-config.yaml">
@@ -570,45 +640,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA1/fabric-ca-server-config.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="156" column="35" selection-start-line="156" selection-start-column="35" selection-end-line="156" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stopFabric.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer/howtobuild.sh">
+    <entry file="file://$PROJECT_DIR$/material/howtobuild.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer/configtx.yaml">
+    <entry file="file://$PROJECT_DIR$/material/configtx.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="128" selection-start-line="128" selection-end-line="131" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer/crypto-config.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="85" column="21" selection-start-line="85" selection-start-column="21" selection-end-line="85" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -619,17 +661,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/startFabric.sh">
+    <entry file="file://$PROJECT_DIR$/material/crypto-config.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="31" selection-start-line="24" selection-end-line="31" />
+        <state relative-caret-position="342">
+          <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA2/startCA2.sh">
+    <entry file="file://$PROJECT_DIR$/material/docker-compose-peer3.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="96" selection-start-line="19" selection-start-column="96" selection-end-line="19" selection-end-column="96" />
+        <state relative-caret-position="2178">
+          <caret line="108" column="18" lean-forward="true" selection-start-line="108" selection-start-column="18" selection-end-line="108" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/material/docker-compose-peer2.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2990">
+          <caret line="130" column="30" selection-start-line="130" selection-start-column="30" selection-end-line="130" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer/CA-Replication/CA2/docker-compose-ca2.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/worker3/docker-compose-step1.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/startFabric.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Worker1/CA1/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/step1.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="59" column="151" lean-forward="true" selection-start-line="59" selection-start-column="151" selection-end-line="59" selection-end-column="151" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/material/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/material/CA-Replication/CA2/startCA2.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="19" column="106" lean-forward="true" selection-start-line="8" selection-end-line="19" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stopFabric.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/worker2/docker-compose-step1.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/material/CA-Replication/CA1/fabric-ca-server-config.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="156" column="19" selection-start-line="156" selection-start-column="19" selection-end-line="156" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/material/CA-Replication/CA1/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="32" lean-forward="true" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/worker1/docker-compose-step1.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
