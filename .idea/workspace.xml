@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a1869e4-d1b9-41c0-87c6-ee12d1ee45c6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/worker1/docker-compose-step2.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worker1/docker-compose-step3.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worker2/docker-compose-step2.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worker3/docker-compose-step2.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worker2/docker-compose-step3.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worker3/docker-compose-step3.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/material/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/material/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step1.sh" beforeDir="false" afterPath="$PROJECT_DIR$/step_execute.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worker1/docker-compose-step1.yml" beforeDir="false" afterPath="$PROJECT_DIR$/worker1/docker-compose-step1.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker1/docker-compose-step3.yml" beforeDir="false" afterPath="$PROJECT_DIR$/worker1/docker-compose-step3.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,37 +19,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/worker1/docker-compose-step2.yml">
+        <entry file="file://$PROJECT_DIR$/worker1/docker-compose-step3.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/worker2/docker-compose-step2.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+            <state relative-caret-position="184">
+              <caret line="92" selection-start-line="92" selection-end-line="121" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/step_execute.sh">
+        <entry file="file://$PROJECT_DIR$/worker2/docker-compose-step3.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="90" column="6" lean-forward="true" selection-start-line="90" selection-start-column="6" selection-end-line="90" selection-end-column="6" />
+            <state relative-caret-position="198">
+              <caret line="105" column="131" selection-start-line="105" selection-start-column="131" selection-end-line="105" selection-end-column="131" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/worker3/docker-compose-step2.yml">
+        <entry file="file://$PROJECT_DIR$/worker3/docker-compose-step3.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+            <state relative-caret-position="129">
+              <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -62,16 +49,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>example</find>
-      <find>channel create</find>
-      <find>5984</find>
-      <find>zo</find>
-      <find>zookeeper</find>
-      <find>ca</find>
       <find>7054</find>
-      <find>couchdb</find>
       <find>composer_default</find>
-      <find>example.com</find>
       <find>/configtx</find>
       <find>$ARCH-0.4.6</find>
       <find>$ARCH-1.1.0</find>
@@ -92,15 +71,25 @@
       <find>fabric-too</find>
       <find>NETWORKMO</find>
       <find>material</find>
+      <find>worker2_worker2</find>
+      <find>worker1_worker1</find>
+      <find>couchdb</find>
+      <find>example.com</find>
+      <find>chaincode</find>
+      <find>peer0</find>
+      <find>orderer.bc.cip</find>
+      <find>peer1</find>
     </findStrings>
     <replaceStrings>
       <replace>biz.cp</replace>
-      <replace>bc.cip</replace>
       <replace>$IMAGETAG</replace>
       <replace>- ./channel-artifacts/:/etc/hyperledger/configtx</replace>
       <replace>genesis.block</replace>
       <replace>default</replace>
       <replace>3</replace>
+      <replace>worker3_worker3</replace>
+      <replace>worker2_worker2</replace>
+      <replace>bc.cip</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -158,10 +147,13 @@
         <option value="$PROJECT_DIR$/worker2/docker-compose-step1.yml" />
         <option value="$PROJECT_DIR$/worker1/docker-compose-step1.yml" />
         <option value="$PROJECT_DIR$/material/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/step_execute.sh" />
         <option value="$PROJECT_DIR$/worker1/docker-compose-step2.yml" />
         <option value="$PROJECT_DIR$/worker2/docker-compose-step2.yml" />
         <option value="$PROJECT_DIR$/worker3/docker-compose-step2.yml" />
-        <option value="$PROJECT_DIR$/step_execute.sh" />
+        <option value="$PROJECT_DIR$/worker3/docker-compose-step3.yml" />
+        <option value="$PROJECT_DIR$/worker1/docker-compose-step3.yml" />
+        <option value="$PROJECT_DIR$/worker2/docker-compose-step3.yml" />
       </list>
     </option>
   </component>
@@ -193,6 +185,12 @@
               <item name="Hyperledger_Script_Maker" type="462c0819:PsiDirectoryNode" />
               <item name="material" type="462c0819:PsiDirectoryNode" />
               <item name="CA-Replication" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Hyperledger_Script_Maker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Hyperledger_Script_Maker" type="462c0819:PsiDirectoryNode" />
+              <item name="material" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto-config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Hyperledger_Script_Maker" type="b2602c69:ProjectViewProjectNode" />
@@ -304,19 +302,19 @@
       <updated>1557380404419</updated>
       <workItem from="1557380405725" duration="12580000" />
       <workItem from="1557517383750" duration="1638000" />
-      <workItem from="1557539887223" duration="35087000" />
+      <workItem from="1557539887223" duration="39294000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61511000" />
+    <option name="totallyTimeSpent" value="65718000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Repositories" weight="0.32980973" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33121917" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33121917" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -417,8 +415,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/startCompose-Peer3.sh" />
-    <entry file="file://$PROJECT_DIR$/bootstrap.sh" />
     <entry file="file://$PROJECT_DIR$/startCompose-Peer1.sh" />
     <entry file="file://$PROJECT_DIR$/startFabric-Peer1.sh" />
     <entry file="file://$USER_HOME$/Downloads/FUR02799409.json">
@@ -534,13 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/material/configtx.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="128" selection-start-line="128" selection-end-line="131" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/startFabric-Peer2.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
@@ -628,13 +617,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/worker3/docker-compose-step1.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/worker2/docker-compose-step1.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -649,45 +631,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/worker1/docker-compose-step3.yml">
+    <entry file="file://$PROJECT_DIR$/step_execute.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/worker3/docker-compose-step2.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/worker1/docker-compose-step2.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/worker1/docker-compose-step1.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-140">
-          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+        <state relative-caret-position="303">
+          <caret line="92" column="6" lean-forward="true" selection-start-line="92" selection-start-column="6" selection-end-line="92" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/worker2/docker-compose-step2.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        <state relative-caret-position="69">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/step_execute.sh">
+    <entry file="file://$PROJECT_DIR$/worker3/docker-compose-step1.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="90" column="6" lean-forward="true" selection-start-line="90" selection-start-column="6" selection-end-line="90" selection-end-column="6" />
+        <state relative-caret-position="109">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/material/configtx.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1297">
+          <caret line="133" column="14" lean-forward="true" selection-start-line="133" selection-start-column="14" selection-end-line="133" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/worker1/docker-compose-step2.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="21" column="48" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/worker3/docker-compose-step2.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/worker1/docker-compose-step1.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/worker1/docker-compose-step3.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="92" selection-start-line="92" selection-end-line="121" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/worker3/docker-compose-step3.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/worker2/docker-compose-step3.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="105" column="131" selection-start-line="105" selection-start-column="131" selection-end-line="105" selection-end-column="131" />
         </state>
       </provider>
     </entry>
