@@ -1,5 +1,9 @@
 version: '2'
 
+networks:
+  worker2_worker2:
+    external: true
+
 services:
 
   kafka.bc.cip:
@@ -19,4 +23,4 @@ services:
     ports:
       - "9092:9092"
     networks:
-      - worker2
+      - worker2_worker2
