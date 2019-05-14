@@ -1,6 +1,6 @@
 #!/bin/bash
 cd "$(dirname "$0")"
-CHANNEL_NAME=default
+CHANNEL_NAME="cip_channel"
 
 rm -rf crypto-config
 rm -rf channel-artifacts
