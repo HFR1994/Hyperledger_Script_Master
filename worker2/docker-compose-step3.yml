@@ -117,6 +117,8 @@ services:
       - ../material/crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
       #- ./scripts:/opt/gopath/src/github.com/hyperledger/fabric/peer/scripts/
       - ../material/channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts
+      - ../material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer1.bc.cip/msp:/etc/hyperledger/msp/orderer/msp
+      - ../material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer1.bc.cip/tls:/etc/hyperledger/tls/orderer/tls
     depends_on:
       - orderer1.bc.cip
       - peer1.org1.bc.cip
