@@ -19,6 +19,8 @@ set -ev
 #Detect architecture
 ARCH=`uname -m`
 
+CHANNEL_NAME="cip_channel"
+
 # Grab the current directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
@@ -35,7 +37,7 @@ echo ${FABRIC_START_TIMEOUT}
 sleep ${FABRIC_START_TIMEOUT}
 
 # Create the channel
-docker exec peer0.org1.bc.cip peer channel create -o orderer0.bc.cip:7050 -c default -f /etc/hyperledger/configtx/channel.tx --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.bc.cip-cert.pem
+docker exec peer0.org1.bc.cip peer channel create -o orderer0.bc.cip:7050 -c $CHANNEL_NAME -f /etc/hyperledger/configtx/channel.tx --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.bc.cip-cert.pem
 
 echo ${FABRIC_START_TIMEOUT}
 sleep ${FABRIC_START_TIMEOUT}
@@ -45,7 +47,7 @@ sleep ${FABRIC_START_TIMEOUT}
 docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.bc.cip/msp" peer0.org1.bc.cip peer channel join -b genesis.block --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.bc.cip-cert.pem
 
 # # Create the channel
-docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.bc.cip/msp" peer1.org1.bc.cip peer channel fetch config -o orderer0.bc.cip:7050 -c default --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.bc.cip-cert.pem
+docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.bc.cip/msp" peer1.org1.bc.cip peer channel fetch config -o orderer0.bc.cip:7050 -c $CHANNEL_NAME --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.bc.cip-cert.pem
 # docker exec peer1.org1.bc.cip peer channel create -o orderer.bc.cip:7050 -c default -f /etc/hyperledger/configtx/material-channel.tx
 
 # # Join peer1.org1.bc.cip to the channel.

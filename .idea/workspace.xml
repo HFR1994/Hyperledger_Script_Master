@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5a1869e4-d1b9-41c0-87c6-ee12d1ee45c6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/material/crypto-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/material/crypto-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startFabric.sh" beforeDir="false" afterPath="$PROJECT_DIR$/startFabric.sh" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,7 +19,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/worker1/docker-compose-step3.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-385">
+            <state relative-caret-position="1748">
               <caret line="76" column="91" selection-start-line="76" selection-start-column="91" selection-end-line="76" selection-end-column="123" />
             </state>
           </provider>
@@ -29,16 +29,34 @@
         <entry file="file://$PROJECT_DIR$/material/configtx.yaml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2990">
-              <caret line="130" column="20" lean-forward="true" selection-start-line="130" selection-start-column="20" selection-end-line="130" selection-end-column="20" />
+              <caret line="130" column="20" selection-start-line="130" selection-start-column="20" selection-end-line="130" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/worker1/docker-compose-step2.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/material/howtobuild.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-end-line="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/worker1/docker-compose-step2.yml">
+        <entry file="file://$PROJECT_DIR$/startFabric.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="22" column="10" lean-forward="true" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+            <state relative-caret-position="455">
+              <caret line="49" column="174" selection-start-line="49" selection-start-column="174" selection-end-line="49" selection-end-column="174" />
             </state>
           </provider>
         </entry>
@@ -47,7 +65,7 @@
         <entry file="file://$PROJECT_DIR$/material/crypto-config.yaml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+              <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -56,7 +74,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ca1_default</find>
       <find>- ./:/etc/hyperledger/configtx</find>
       <find>composer-genesis.block</find>
       <find>.tx</find>
@@ -86,6 +103,7 @@
       <find>orderer1</find>
       <find>worker1</find>
       <find>ca.</find>
+      <find>CHANNEL_</find>
     </findStrings>
     <replaceStrings>
       <replace>biz.cp</replace>
@@ -102,9 +120,9 @@
       <replace>worker2</replace>
     </replaceStrings>
     <dirStrings>
-      <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/composer</dir>
       <dir>$PROJECT_DIR$/worker1</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -140,7 +158,6 @@
         <option value="$PROJECT_DIR$/composer/howtobuild.sh" />
         <option value="$PROJECT_DIR$/composer/CA-Replication/CA1/startCA1.sh" />
         <option value="$PROJECT_DIR$/composer/CA-Replication/CA1/docker-compose-ca1.yml" />
-        <option value="$PROJECT_DIR$/startFabric.sh" />
         <option value="$PROJECT_DIR$/composer/configtx.yaml" />
         <option value="$PROJECT_DIR$/composer/CA-Replication/CA1/fabric-ca-server-config.yaml" />
         <option value="$PROJECT_DIR$/composer/crypto-config.yaml" />
@@ -167,6 +184,8 @@
         <option value="$PROJECT_DIR$/worker2/docker-compose-step3.yml" />
         <option value="$PROJECT_DIR$/worker1/docker-compose-step3.yml" />
         <option value="$PROJECT_DIR$/material/crypto-config.yaml" />
+        <option value="$PROJECT_DIR$/material/howtobuild.sh" />
+        <option value="$PROJECT_DIR$/startFabric.sh" />
       </list>
     </option>
   </component>
@@ -295,16 +314,16 @@
       <workItem from="1557517383750" duration="1638000" />
       <workItem from="1557539887223" duration="39542000" />
       <workItem from="1557768252956" duration="647000" />
-      <workItem from="1557769396226" duration="7771000" />
+      <workItem from="1557769396226" duration="8214000" />
+      <workItem from="1557860499916" duration="239000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74384000" />
+    <option name="totallyTimeSpent" value="75066000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33121917" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -459,9 +478,7 @@
     <entry file="file://$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/msp/config.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/msp/config.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/msp/config.yaml" />
     <entry file="file://$PROJECT_DIR$/material/crypto-config/peerOrganizations/org1.bc.cip/msp/config.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -587,20 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/material/howtobuild.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/startFabric.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="46" column="22" lean-forward="true" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/worker3/docker-compose-step3.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -615,20 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/material/crypto-config.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/worker1/docker-compose-step3.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-385">
-          <caret line="76" column="91" selection-start-line="76" selection-start-column="91" selection-end-line="76" selection-end-column="123" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/worker1/docker-compose-step1.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-142">
@@ -636,17 +625,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/worker1/docker-compose-step3.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1748">
+          <caret line="76" column="91" selection-start-line="76" selection-start-column="91" selection-end-line="76" selection-end-column="123" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/material/configtx.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2990">
-          <caret line="130" column="20" lean-forward="true" selection-start-line="130" selection-start-column="20" selection-end-line="130" selection-end-column="20" />
+          <caret line="130" column="20" selection-start-line="130" selection-start-column="20" selection-end-line="130" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/worker1/docker-compose-step2.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
-          <caret line="22" column="10" lean-forward="true" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/material/crypto-config.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/material/howtobuild.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/startFabric.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="49" column="174" selection-start-line="49" selection-start-column="174" selection-end-line="49" selection-end-column="174" />
         </state>
       </provider>
     </entry>
