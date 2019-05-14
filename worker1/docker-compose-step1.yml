@@ -9,11 +9,13 @@ networks:
 
 services:
 
-  ca.org1.bc.cip:
+  ca1.org1.bc.cip:
     image: hyperledger/fabric-ca:$IMAGETAG
+    hostname: ca1.org1.bc.cip
+    container_name: ca.org1.bc.cip
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=ca.org1.bc.cip
+      - FABRIC_CA_SERVER_CA_NAME=ca1.org1.bc.cip
       - FABRIC_CA_SERVER_TLS_ENABLED=true
       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org1.bc.cip-cert.pem
       - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/$ORG1CAKEY
@@ -24,7 +26,6 @@ services:
     volumes:
       - ../material/crypto-config/peerOrganizations/org1.bc.cip/ca/:/etc/hyperledger/fabric-ca-server-config
       - ../material/CA-Replication/CA1/fabric-ca-server-config.yaml:/etc/hyperledger/fabric-ca-server-config/fabric-ca-server-config.yaml
-    container_name: ca.org1.bc.cip
     depends_on:
       - pg.master.bc.cip
     networks:

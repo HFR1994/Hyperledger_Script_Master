@@ -6,8 +6,9 @@ networks:
 
 services:
 
-  orderer.bc.cip:
+  orderer2.bc.cip:
     container_name: orderer.bc.cip
+    hostname: orderer2.bc.cip
     image: hyperledger/fabric-orderer:$IMAGETAG
     environment:
       - ORDERER_GENERAL_LOGLEVEL=DEBUG
@@ -24,14 +25,14 @@ services:
       - ORDERER_KAFKA_RETRY_SHORTINTERVAL=1s
       - ORDERER_KAFKA_RETRY_SHORTTOTAL=30s
       - ORDERER_KAFKA_VERBOSE=true
-      - CONFIGTX_ORDERER_KAFKA_BROKERS=[192.168.1.2:9092, 192.168.1.3:9092, kafka.bc.cip:9092]
+      - CONFIGTX_ORDERER_KAFKA_BROKERS=[kafka.bc.cip:9092, 192.168.1.3:9092, 192.168.1.4:9092]
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
     command: orderer
     ports:
       - "7050:7050"
     volumes:
       - ../material/channel-artifacts/:/etc/hyperledger/configtx
-      - ../material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer3.bc.cip/msp:/etc/hyperledger/msp/orderer/msp
-      - ../material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer3.bc.cip/tls:/etc/hyperledger/tls/orderer/tls
+      - ../material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/msp:/etc/hyperledger/msp/orderer/msp
+      - ../material/crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/tls:/etc/hyperledger/tls/orderer/tls
     networks:
       - worker3_worker3
