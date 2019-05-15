@@ -11,7 +11,7 @@ services:
     hostname: ca2.org1.bc.cip
     container_name: ca.org1.bc.cip
     environment:
-      - LICENSE="accept"
+      - LICENSE=accept
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca2.org1.bc.cip
       - FABRIC_CA_SERVER_TLS_ENABLED=true
@@ -51,7 +51,7 @@ services:
     image: ibmblockchain/fabric-zookeeper:$EXTERNALTAG
     restart: always
     environment:
-      - LICENSE="accept"
+      - LICENSE=accept
       - ZOO_MY_ID=2
       - ZOO_SERVERS=server.1=192.168.1.2:2888:3888 server.2=zookeeper:2888:3888 server.3=192.168.1.4:2888:3888
     ports:

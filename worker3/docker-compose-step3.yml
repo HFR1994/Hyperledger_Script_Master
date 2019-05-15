@@ -11,7 +11,7 @@ services:
     hostname: orderer2.bc.cip
     image: ibmblockchain/fabric-orderer:$IMAGETAG
     environment:
-      - LICENSE="accept"
+      - LICENSE=accept
       - ORDERER_GENERAL_LOGLEVEL=DEBUG
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
       - ORDERER_GENERAL_GENESISMETHOD=file
