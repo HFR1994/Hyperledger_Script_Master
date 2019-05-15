@@ -94,7 +94,7 @@ services:
 
   cli:
     container_name: cli
-    image: ibmblockchain/fabric-tools:$IMAGETAG
+    image: ibmblockchain/fabric-tools:1.2.1
     tty: true
     stdin_open: true
     environment:
