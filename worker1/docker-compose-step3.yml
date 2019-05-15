@@ -11,6 +11,7 @@ services:
     hostname: orderer0.bc.cip
     image: ibmblockchain/fabric-orderer:$IMAGETAG
     environment:
+      - LICENSE="accept"
       - ORDERER_GENERAL_LOGLEVEL=DEBUG
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
       - ORDERER_GENERAL_GENESISMETHOD=file
@@ -42,6 +43,7 @@ services:
     hostname: peer0.org1.bc.cip
     image: ibmblockchain/fabric-peer:$IMAGETAG
     environment:
+      - LICENSE="accept"
       - CORE_LOGGING_PEER=debug
       - CORE_CHAINCODE_LOGGING_LEVEL=DEBUG
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
@@ -87,6 +89,7 @@ services:
     ports:
       - "5984:5984"
     environment:
+      - LICENSE="accept"
       - COUCHDB_USER=admin
       - COUCHDB_PASSWORD=adminpw
     networks:
@@ -98,6 +101,7 @@ services:
     tty: true
     stdin_open: true
     environment:
+      - LICENSE="accept"
       - GOPATH=/opt/gopath
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
       - FABRIC_LOGGING_SPEC=DEBUG
