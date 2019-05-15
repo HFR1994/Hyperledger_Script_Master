@@ -9,7 +9,7 @@ services:
   orderer1.bc.cip:
     container_name: orderer.bc.cip
     hostname: orderer1.bc.cip
-    image: hyperledger/fabric-orderer:$IMAGETAG
+    image: ibmblockchain/fabric-orderer:$IMAGETAG
     environment:
       - ORDERER_GENERAL_LOGLEVEL=DEBUG
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
@@ -40,7 +40,7 @@ services:
   peer1.org1.bc.cip:
     container_name: peer.org1.bc.cip
     hostname: peer1.org1.bc.cip
-    image: hyperledger/fabric-peer:$IMAGETAG
+    image: ibmblockchain/fabric-peer:$IMAGETAG
     environment:
       - CORE_LOGGING_PEER=debug
       - CORE_CHAINCODE_LOGGING_LEVEL=DEBUG
@@ -83,7 +83,7 @@ services:
 
   couchdb.bc.cip:
     container_name: couchdb.bc.cip
-    image: hyperledger/fabric-couchdb:$IMAGETAG
+    image: ibmblockchain/fabric-couchdb:$IMAGETAG
     ports:
       - "5984:5984"
     environment:
@@ -94,7 +94,7 @@ services:
 
   cli:
     container_name: cli
-    image: hyperledger/fabric-tools:$IMAGETAG
+    image: ibmblockchain/fabric-tools:$IMAGETAG
     tty: true
     stdin_open: true
     environment:

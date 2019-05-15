@@ -9,7 +9,7 @@ services:
   kafka.bc.cip:
     container_name: kafka.bc.cip
     # image: wurstmeister/kafka:latest
-    image: hyperledger/fabric-kafka:$IMAGETAG
+    image: ibmblockchain/fabric-kafka:$EXTERNALTAG
     restart: always
     environment:
       - KAFKA_MESSAGE_MAX_BYTES=103809024

@@ -243,11 +243,9 @@ ldap:
 # which are always stored in lower case.
 #############################################################################
 affiliations:
-  org1:
+  cip:
     - department1
     - department2
-  org2:
-    - department1
 
 #############################################################################
 #  Signing section
@@ -307,16 +305,16 @@ signing:
 #     CA certificates though it can still issue end entity certificates.
 ###########################################################################
 csr:
-  cn: fabric-ca-server
+  cn: Servico de Confianca Distribuida CA V1
   keyrequest:
     algo: ecdsa
     size: 256
   names:
-    - C: US
-      ST: "North Carolina"
+    - C: BR
+      ST:
       L:
-      O: Hyperledger
-      OU: Fabric
+      O: CAMARA INTERBANCARIA DE PAGAMENTOS - CIP
+      OU: scd.cip-bancos.org.br
   hosts:
     - 49809874a6c9
     - localhost

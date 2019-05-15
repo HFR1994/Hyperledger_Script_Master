@@ -3,7 +3,7 @@ version: '2'
 services:
   orderer2.bc.cip:
     container_name: orderer2.bc.cip
-    image: hyperledger/fabric-orderer:$IMAGETAG
+    image: ibmblockchain/fabric-orderer:$IMAGETAG
     environment:
       - ORDERER_GENERAL_LOGLEVEL=debug
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
@@ -37,7 +37,7 @@ services:
   kafka8:
     container_name: kafka8
     # image: wurstmeister/kafka:latest
-    image: hyperledger/fabric-kafka
+    image: ibmblockchain/fabric-kafka
     restart: always
     environment:
       - KAFKA_MESSAGE_MAX_BYTES=103809024
@@ -56,7 +56,7 @@ services:
   kafka9:
     container_name: kafka9
     # image: wurstmeister/kafka:latest
-    image: hyperledger/fabric-kafka
+    image: ibmblockchain/fabric-kafka
     restart: always
     environment:
       - KAFKA_MESSAGE_MAX_BYTES=103809024
@@ -75,7 +75,7 @@ services:
   kafka10:
     container_name: kafka10
     # image: wurstmeister/kafka:latest
-    image: hyperledger/fabric-kafka
+    image: ibmblockchain/fabric-kafka
     restart: always
     environment:
       - KAFKA_MESSAGE_MAX_BYTES=103809024
@@ -94,7 +94,7 @@ services:
   kafka11:
     container_name: kafka11
     # image: wurstmeister/kafka:latest
-    image: hyperledger/fabric-kafka
+    image: ibmblockchain/fabric-kafka
     restart: always
     environment:
       - KAFKA_MESSAGE_MAX_BYTES=103809024
@@ -113,7 +113,7 @@ services:
   zookeeper2:
     container_name: zookeeper2
     # image: tmeister/zookeeper:latest
-    image: hyperledger/fabric-zookeeper
+    image: ibmblockchain/fabric-zookeeper
     restart: always
     environment:
       - ZOO_MY_ID=3

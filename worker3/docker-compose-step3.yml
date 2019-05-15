@@ -9,7 +9,7 @@ services:
   orderer2.bc.cip:
     container_name: orderer.bc.cip
     hostname: orderer2.bc.cip
-    image: hyperledger/fabric-orderer:$IMAGETAG
+    image: ibmblockchain/fabric-orderer:$IMAGETAG
     environment:
       - ORDERER_GENERAL_LOGLEVEL=DEBUG
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0

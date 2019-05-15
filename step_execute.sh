@@ -37,8 +37,9 @@ function networkUp() {
         #Replace Certificate Key
         ORG1CAKEY="$(ls ./material/crypto-config/peerOrganizations/org1.bc.cip/ca/ | grep 'sk$')"
         #Set IMAGETAG
-        IMAGETAG="latest"
-        ORG1CAKEY=$ORG1CAKEY IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/worker"${WORKER_NODE}"/docker-compose-step"${STEP}".yml up -d
+        IMAGETAG="1.4.0"
+        EXTERNALTAG="0.4.10"
+        ORG1CAKEY=$ORG1CAKEY EXTERNALTAG=$EXTERNALTAG IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/worker"${WORKER_NODE}"/docker-compose-step"${STEP}".yml up -d
     else
         echo "No crypto material has been generated"
     fi
@@ -56,9 +57,9 @@ function networkDown() {
         #Replace Certificate Key
         ORG1CAKEY="$(ls ./material/crypto-config/peerOrganizations/org1.bc.cip/ca/ | grep 'sk$')"
         #Set IMAGETAG
-        IMAGETAG="latest"
-
-        ORG1CAKEY=$ORG1CAKEY IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/worker"${WORKER_NODE}"/docker-compose-step"${STEP}".yml down --rmi all -v
+        IMAGETAG="1.4.0"
+        EXTERNALTAG="0.4.10"
+        ORG1CAKEY=$ORG1CAKEY EXTERNALTAG=$EXTERNALTAG IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/worker"${WORKER_NODE}"/docker-compose-step"${STEP}".yml down --rmi all -v
     else
         echo "No crypto material has been generated"
     fi

@@ -10,7 +10,7 @@ networks:
 services:
 
   ca1.org1.bc.cip:
-    image: hyperledger/fabric-ca:$IMAGETAG
+    image: ibmblockchain/fabric-ca:$IMAGETAG
     hostname: ca1.org1.bc.cip
     container_name: ca.org1.bc.cip
     environment:
@@ -51,7 +51,7 @@ services:
   zookeeper:
     container_name: zookeeper.bc.cip
     # image: tmeister/zookeeper:latest
-    image: hyperledger/fabric-zookeeper
+    image: ibmblockchain/fabric-zookeeper:$EXTERNALTAG
     restart: always
     environment:
       - ZOO_MY_ID=1

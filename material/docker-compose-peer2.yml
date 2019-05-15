@@ -4,7 +4,7 @@ services:
 
   orderer1.bc.cip:
     container_name: orderer1.bc.cip
-    image: hyperledger/fabric-orderer:$IMAGETAG
+    image: ibmblockchain/fabric-orderer:$IMAGETAG
     environment:
       - ORDERER_GENERAL_LOGLEVEL=debug
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
@@ -37,7 +37,7 @@ services:
 
   peer2.org1.bc.cip:
     container_name: peer2.org1.bc.cip
-    image: hyperledger/fabric-peer:$IMAGETAG
+    image: ibmblockchain/fabric-peer:$IMAGETAG
     environment:
       - CORE_LOGGING_PEER=debug
       - CORE_CHAINCODE_LOGGING_LEVEL=DEBUG
@@ -75,7 +75,7 @@ services:
 
   couchdb2:
     container_name: couchdb2
-    image: hyperledger/fabric-couchdb:$IMAGETAG
+    image: ibmblockchain/fabric-couchdb:$IMAGETAG
     ports:
       - 7984:5984
     environment:
@@ -83,7 +83,7 @@ services:
 
   peer3.org1.bc.cip:
     container_name: peer3.org1.bc.cip
-    image: hyperledger/fabric-peer:$IMAGETAG
+    image: ibmblockchain/fabric-peer:$IMAGETAG
     environment:
       - CORE_LOGGING_PEER=debug
       - CORE_CHAINCODE_LOGGING_LEVEL=DEBUG
@@ -121,7 +121,7 @@ services:
 
   couchdb3:
     container_name: couchdb3
-    image: hyperledger/fabric-couchdb:$IMAGETAG
+    image: ibmblockchain/fabric-couchdb:$IMAGETAG
     ports:
       - 8984:5984
     environment:
@@ -130,7 +130,7 @@ services:
   zookeeper:
     container_name: zookeeper1
     # image: tmeister/zookeeper:latest
-    image: hyperledger/fabric-zookeeper
+    image: ibmblockchain/fabric-zookeeper
     restart: always
     environment:
       - ZOO_MY_ID=2
@@ -142,7 +142,7 @@ services:
 
   kafka:
     container_name: kafka4
-    image: hyperledger/fabric-kafka
+    image: ibmblockchain/fabric-kafka
     restart: always
     environment:
       - KAFKA_MESSAGE_MAX_BYTES=103809024

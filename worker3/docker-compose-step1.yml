@@ -7,7 +7,7 @@ services:
 
   zookeeper:
     container_name: zookeeper.bc.cip
-    image: hyperledger/fabric-zookeeper
+    image: ibmblockchain/fabric-zookeeper:$EXTERNALTAG
     restart: always
     environment:
       - ZOO_MY_ID=3
