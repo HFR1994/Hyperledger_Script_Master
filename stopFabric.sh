@@ -11,7 +11,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 git reset --hard HEAD
 git pull origin master
-chown +x *.sh material/*.sh
+chmod +x *.sh material/*.sh
 docker container stop $(docker container ls -aq)
 docker rm $(docker ps -a -q)
 docker system prune -f
