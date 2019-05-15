@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 export VERBOSE=false
 ARCH=`uname -m`
