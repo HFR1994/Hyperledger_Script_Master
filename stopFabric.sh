@@ -9,7 +9,9 @@ ARCH=`uname -m`
 # Grab the current directorydirectory.
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+git reset --hard HEAD
 git pull origin master
+sudo chown +x *.sh material/*.sh
 docker container stop $(docker container ls -aq)
 docker rm $(docker ps -a -q)
-docker system prune --volumes -f
+docker system prune -f
