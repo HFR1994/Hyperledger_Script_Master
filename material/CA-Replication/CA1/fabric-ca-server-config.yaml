@@ -44,10 +44,9 @@ port: 7054
 
 # Cross-Origin Resource Sharing (CORS)
 cors:
-  enabled: true
+  enabled: false
   origins:
-    - "localhost"
-    - "192."
+    - "*"
 
 # Enables debug logging (default: false)
 debug: false
