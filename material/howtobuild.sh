@@ -1,6 +1,6 @@
 #!/bin/bash
 cd "$(dirname "$0")"
-CHANNEL_NAME="cip-channel"
+CHANNEL_NAME="scd-deviceid"
 
 rm -rf crypto-config
 rm -rf channel-artifacts

@@ -305,7 +305,7 @@ signing:
 #     CA certificates though it can still issue end entity certificates.
 ###########################################################################
 csr:
-  cn: Servico de Confianca Distribuida CA V1
+  cn: Servico de Confianca Distribuida CA HEXT V1
   keyrequest:
     algo: ecdsa
     size: 256
@@ -314,7 +314,7 @@ csr:
       ST:
       L:
       O: CAMARA INTERBANCARIA DE PAGAMENTOS - CIP
-      OU: scd.cip-bancos.org.br
+      OU: scd-h001.cip-bancos.org.br
   hosts:
     - 49809874a6c9
     - localhost
