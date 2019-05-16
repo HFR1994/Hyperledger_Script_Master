@@ -94,10 +94,10 @@ Organizations:
                 Type: Signature
                 Rule: "OR('Org1MSP.admin')"
         AnchorPeers:
-            - Host: 192.168.1.2
-              Port: 7051
-            - Host: 192.168.1.3
-              Port: 7051
+            - Host: peer1.hext.scd.org.br
+              Port: 7151
+            - Host: peer2.hext.scd.org.br
+              Port: 7251
 
 Application: &ApplicationDefaults
 
@@ -125,9 +125,9 @@ Application: &ApplicationDefaults
 Orderer: &OrdererDefaults
     OrdererType: kafka
     Addresses:
-        - 192.168.1.2:7050
-        - 192.168.1.3:7050
-        - 192.168.1.4:7050
+        - orderer1:7050
+        - orderer2:7050
+        - orderer3:7050
     BatchTimeout: 2s
     BatchSize:
         MaxMessageCount: 10
@@ -135,9 +135,9 @@ Orderer: &OrdererDefaults
         PreferredMaxBytes: 512 KB
     Kafka:
         Brokers:
-            - 192.168.1.2:9092
-            - 192.168.1.3:9092
-            - 192.168.1.4:9092
+            - kafka1:9092
+            - kafka2:9092
+            - kafka3:9092
 
     Organizations:
     - *OrdererOrg

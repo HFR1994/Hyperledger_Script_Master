@@ -2,15 +2,9 @@ OrdererOrgs:
   - Name: Orderer
     Domain: bc.cip
     Specs:
-      - Hostname: orderer0
-        SANS:
-          - 192.168.1.2
       - Hostname: orderer1
-        SANS:
-          - 192.168.1.3
       - Hostname: orderer2
-        SANS:
-          - 192.168.1.4
+      - Hostname: orderer3
 
 PeerOrgs:
   - Name: Org1
@@ -18,19 +12,10 @@ PeerOrgs:
     EnableNodeOUs: true
     CA:
       Specs:
-        - Hostname: ca1
-          SANS:
-            - 192.168.1.2
-        - Hostname: ca2
-          SANS:
-            - 192.168.1.3
+        - Hostname: ca-svc
     Specs:
-      - Hostname: peer0
-        SANS:
-          - 192.168.1.2
       - Hostname: peer1
-        SANS:
-          - 192.168.1.3
+      - Hostname: peer2
     Template:
       Count: 0
     Users:
