@@ -42,19 +42,19 @@ Channel: &ChannelDefaults
     # Policies defines the set of policies at this level of the config tree
     # For Channel policies, their canonical path is
     #   /Channel/<PolicyName>
-    Policies:
-        # Who may invoke the 'Deliver' API
-        Readers:
-            Type: ImplicitMeta
-            Rule: "ANY Readers"
-        # Who may invoke the 'Broadcast' API
-        Writers:
-            Type: ImplicitMeta
-            Rule: "ANY Writers"
-        # By default, who may modify elements at this config level
-        Admins:
-            Type: ImplicitMeta
-            Rule: "MAJORITY Admins"
+#    Policies:
+#        # Who may invoke the 'Deliver' API
+#        Readers:
+#            Type: ImplicitMeta
+#            Rule: "ANY Readers"
+#        # Who may invoke the 'Broadcast' API
+#        Writers:
+#            Type: ImplicitMeta
+#            Rule: "ANY Writers"
+#        # By default, who may modify elements at this config level
+#        Admins:
+#            Type: ImplicitMeta
+#            Rule: "MAJORITY Admins"
 
     # Capabilities describes the channel level capabilities, see the
     # dedicated Capabilities section elsewhere in this file for a full
@@ -68,31 +68,31 @@ Organizations:
         ID: OrdererMSP
         MSPDir: crypto-config/ordererOrganizations/bc.cip/msp
         AdminPrincipal: Role.ADMIN
-        Policies:
-            Readers:
-                Type: Signature
-                Rule: "OR('OrdererMSP.member')"
-            Writers:
-                Type: Signature
-                Rule: "OR('OrdererMSP.member')"
-            Admins:
-                Type: Signature
-                Rule: "OR('OrdererMSP.admin')"
+#        Policies:
+#            Readers:
+#                Type: Signature
+#                Rule: "OR('OrdererMSP.member')"
+#            Writers:
+#                Type: Signature
+#                Rule: "OR('OrdererMSP.member')"
+#            Admins:
+#                Type: Signature
+#                Rule: "OR('OrdererMSP.admin')"
     - &Org1
         Name: Org1MSP
         ID: Org1MSP
         MSPDir: crypto-config/peerOrganizations/org1.bc.cip/msp
         AdminPrincipal: Role.ADMIN
-        Policies:
-            Readers:
-                Type: Signature
-                Rule: "OR('Org1MSP.admin', 'Org1MSP.peer', 'Org1MSP.client')"
-            Writers:
-                Type: Signature
-                Rule: "OR('Org1MSP.admin', 'Org1MSP.client')"
-            Admins:
-                Type: Signature
-                Rule: "OR('Org1MSP.admin')"
+#        Policies:
+#            Readers:
+#                Type: Signature
+#                Rule: "OR('Org1MSP.admin', 'Org1MSP.peer', 'Org1MSP.client')"
+#            Writers:
+#                Type: Signature
+#                Rule: "OR('Org1MSP.admin', 'Org1MSP.client')"
+#            Admins:
+#                Type: Signature
+#                Rule: "OR('Org1MSP.admin')"
         AnchorPeers:
             - Host: 192.168.1.2
               Port: 7051
@@ -108,16 +108,16 @@ Application: &ApplicationDefaults
     # Policies defines the set of policies at this level of the config tree
     # For Application policies, their canonical path is
     #   /Channel/Application/<PolicyName>
-    Policies:
-        Readers:
-            Type: ImplicitMeta
-            Rule: "ANY Readers"
-        Writers:
-            Type: ImplicitMeta
-            Rule: "ANY Writers"
-        Admins:
-            Type: ImplicitMeta
-            Rule: "MAJORITY Admins"
+#    Policies:
+#        Readers:
+#            Type: ImplicitMeta
+#            Rule: "ANY Readers"
+#        Writers:
+#            Type: ImplicitMeta
+#            Rule: "ANY Writers"
+#        Admins:
+#            Type: ImplicitMeta
+#            Rule: "MAJORITY Admins"
 
     Capabilities:
         #<<: *ApplicationCapabilities
@@ -144,21 +144,21 @@ Orderer: &OrdererDefaults
     Capabilities:
         <<: *OrdererCapabilities
 
-    Policies:
-        Readers:
-            Type: ImplicitMeta
-            Rule: "ANY Readers"
-        Writers:
-            Type: ImplicitMeta
-            Rule: "ANY Writers"
-        Admins:
-            Type: ImplicitMeta
-            Rule: "MAJORITY Admins"
-        # BlockValidation specifies what signatures must be included in the block
-        # from the orderer for the peer to validate it.
-        BlockValidation:
-            Type: ImplicitMeta
-            Rule: "ANY Writers"
+#    Policies:
+#        Readers:
+#            Type: ImplicitMeta
+#            Rule: "ANY Readers"
+#        Writers:
+#            Type: ImplicitMeta
+#            Rule: "ANY Writers"
+#        Admins:
+#            Type: ImplicitMeta
+#            Rule: "MAJORITY Admins"
+#        # BlockValidation specifies what signatures must be included in the block
+#        # from the orderer for the peer to validate it.
+#        BlockValidation:
+#            Type: ImplicitMeta
+#            Rule: "ANY Writers"
 
 Profiles:
     ModeKafkaOrderer:

@@ -19,7 +19,7 @@ set -ev
 #Detect architecture
 ARCH=`uname -m`
 
-CHANNEL_NAME="cip_channel"
+CHANNEL_NAME="scd-deviceid"
 
 # Grab the current directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
