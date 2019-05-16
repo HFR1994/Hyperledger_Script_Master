@@ -59,7 +59,7 @@ function networkDown() {
         #Set IMAGETAG
         IMAGETAG="1.4.0"
         EXTERNALTAG="0.4.10"
-        ORG1CAKEY=$ORG1CAKEY EXTERNALTAG=$EXTERNALTAG IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/worker"${WORKER_NODE}"/docker-compose-step"${STEP}".yml down --rmi all -v
+        ORG1CAKEY=$ORG1CAKEY EXTERNALTAG=$EXTERNALTAG IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/worker"${WORKER_NODE}"/docker-compose-step"${STEP}".yml down -v
     else
         echo "No crypto material has been generated"
     fi

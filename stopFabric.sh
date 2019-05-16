@@ -14,3 +14,4 @@ git pull origin master
 chmod +x *.sh material/*.sh
 docker container stop $(docker container ls -aq)
 docker rm $(docker ps -a -q)
+docker system prune -f
