@@ -28,9 +28,6 @@ ORG1CAKEY="$(ls ./material/crypto-config/peerOrganizations/org1.bc.cip/ca/ | gre
 
 IMAGETAG="latest"
 
-ORG1CAKEY=$ORG1CAKEY IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/composer/docker-compose.yml down
-ORG1CAKEY=$ORG1CAKEY IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/composer/docker-compose.yml up -d
-
 # wait for Hyperledger Fabric to start
 # incase of errors when running later commands, issue export FABRIC_START_TIMEOUT=<larger number>
 echo ${FABRIC_START_TIMEOUT}
