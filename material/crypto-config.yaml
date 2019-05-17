@@ -3,8 +3,14 @@ OrdererOrgs:
     Domain: bc.cip
     Specs:
       - Hostname: orderer1
+        SANS:
+          - orderer-svc
       - Hostname: orderer2
+        SANS:
+          - orderer-svc
       - Hostname: orderer3
+        SANS:
+          - orderer-svc
 
 PeerOrgs:
   - Name: Org1
