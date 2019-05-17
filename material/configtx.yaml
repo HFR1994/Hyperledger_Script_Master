@@ -84,13 +84,13 @@ Organizations:
         Policies:
             Readers:
                 Type: Signature
-                Rule: "OR('04391007.admin', '04391007.peer', '04391007.client')"
+                Rule: "OR('ISPB04391007.admin', 'ISPB04391007.peer', 'ISPB04391007.client')"
             Writers:
                 Type: Signature
-                Rule: "OR('04391007.admin', '04391007.client')"
+                Rule: "OR('ISPB04391007.admin', 'ISPB04391007.client')"
             Admins:
                 Type: Signature
-                Rule: "OR('04391007.admin')"
+                Rule: "OR('ISPB04391007.admin')"
         AnchorPeers:
             - Host: peer1
               Port: 7051
