@@ -29,7 +29,7 @@ class Chaincode extends Contract {
      * @param {[String]} idCertificado campo exclusivo da CIP
      * @returns {[JSON]} Dispositivo
      */
-    async qualificaDispositivo(ctx, imei, iccid, msisdn, motivo, descricao, numeroReferenciaIF, ispb, assinatura, idCertificado) {
+    async qualificaDispositivo(ctx, imei, iccid, msisdn, motivo, descricao, numeroReferenciaIF, ispb, assinatura, idCertificado, chavePublica) {
 
         try {
             //console.info('============= INICIO : Qualificar Dispositivo ===========')

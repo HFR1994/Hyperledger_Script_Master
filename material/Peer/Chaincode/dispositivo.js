@@ -2,7 +2,7 @@ const Auxiliar = require('./auxiliar')
 
 
 class Dispositivo {
-    constructor(imei, iccid, msisdn, motivo, descricao, numeroReferenciaIF, dataCriacao, ispb, assinatura, idCertificado) {
+    constructor(imei, iccid, msisdn, motivo, descricao, numeroReferenciaIF, dataCriacao, ispb, assinatura, idCertificado, chavePublica) {
         this.idDispositivo = Auxiliar.verificaEConcatenaHashes(imei, iccid, msisdn)
         this.motivo = Auxiliar.verificaMotivo(motivo)
         this.numeroReferenciaIF = numeroReferenciaIF ? numeroReferenciaIF : ""
@@ -15,6 +15,7 @@ class Dispositivo {
         this.assinatura = assinatura ? assinatura : ""
         this.idCertificado = idCertificado ? idCertificado : ""
         this.descricao = descricao ? descricao : ""
+        this.chavePublica = chavePublica ? chavePublica : ""
     }
 
     paraJSON() {
