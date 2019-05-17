@@ -34,10 +34,10 @@ IMAGETAG=$IMAGETAG ARCH=$ARCH docker-compose -f "${DIR}"/composer/docker-compose
 echo ${FABRIC_START_TIMEOUT}
 sleep ${FABRIC_START_TIMEOUT}
 
-docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.bc.cip/msp" peer2.org1.bc.cip peer channel fetch config -o orderer0.bc.cip:7050 -c default --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.bc.cip-cert.pem
+docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.hext.scd.org.br/msp" peer2.org1.hext.scd.org.br peer channel fetch config -o orderer0.hext.scd.org.br:7050 -c default --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.hext.scd.org.br-cert.pem
 
-docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.bc.cip/msp" peer2.org1.bc.cip peer channel join -b default_config.block --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.bc.cip-cert.pem
+docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.hext.scd.org.br/msp" peer2.org1.hext.scd.org.br peer channel join -b default_config.block --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.hext.scd.org.br-cert.pem
 
-docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.bc.cip/msp" peer3.org1.bc.cip peer channel fetch config -o orderer0.bc.cip:7050 -c default --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.bc.cip-cert.pem
+docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.hext.scd.org.br/msp" peer3.org1.hext.scd.org.br peer channel fetch config -o orderer0.hext.scd.org.br:7050 -c default --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.hext.scd.org.br-cert.pem
 
-docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.bc.cip/msp" peer3.org1.bc.cip peer channel join -b default_config.block --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.bc.cip-cert.pem
+docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.hext.scd.org.br/msp" peer3.org1.hext.scd.org.br peer channel join -b default_config.block --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.hext.scd.org.br-cert.pem

@@ -6,31 +6,31 @@ networks:
 
 services:
 
-  ca2.org1.bc.cip:
+  ca2.org1.hext.scd.org.br:
     image: ibmblockchain/fabric-ca:$IMAGETAG
-    hostname: ca2.org1.bc.cip
-    container_name: ca.org1.bc.cip
+    hostname: ca2.org1.hext.scd.org.br
+    container_name: ca.org1.hext.scd.org.br
     environment:
       - LICENSE=accept
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=ca2.org1.bc.cip
+      - FABRIC_CA_SERVER_CA_NAME=ca2.org1.hext.scd.org.br
       - FABRIC_CA_SERVER_TLS_ENABLED=true
-      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org1.bc.cip-cert.pem
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org1.hext.scd.org.br-cert.pem
       - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/16a82e6ccfe1d78cc03da897976a5e4906bbc3fc7c138bcf5e4f8bf9272ffbf7_sk
       - REP_HOST=192.168.1.2
     ports:
       - "7054:7054"
-    command: sh -c 'sleep 30 && fabric-ca-server start -c /etc/hyperledger/fabric-ca-server-config/fabric-ca-server-config.yaml --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.org1.bc.cip-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/16a82e6ccfe1d78cc03da897976a5e4906bbc3fc7c138bcf5e4f8bf9272ffbf7_sk -b admin:adminpw -d'
+    command: sh -c 'sleep 30 && fabric-ca-server start -c /etc/hyperledger/fabric-ca-server-config/fabric-ca-server-config.yaml --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.org1.hext.scd.org.br-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/16a82e6ccfe1d78cc03da897976a5e4906bbc3fc7c138bcf5e4f8bf9272ffbf7_sk -b admin:adminpw -d'
     volumes:
-      - ../material/crypto-config/peerOrganizations/org1.bc.cip/ca/:/etc/hyperledger/fabric-ca-server-config
+      - ../material/crypto-config/peerOrganizations/org1.hext.scd.org.br/ca/:/etc/hyperledger/fabric-ca-server-config
       - ../material/CA-Replication/CA2/fabric-ca-server-config.yaml:/etc/hyperledger/fabric-ca-server-config/fabric-ca-server-config.yaml
     depends_on:
-      - pg.slave.bc.cip
+      - pg.slave.hext.scd.org.br
     networks:
       - ca_network
       - worker2
 
-  pg.slave.bc.cip:
+  pg.slave.hext.scd.org.br:
     build: ../material/CA-Replication/CA2/
     environment:
       - POSTGRES_USER=admin
@@ -39,14 +39,14 @@ services:
       - PG_REP_USER=rep_admin
       - PG_REP_PASSWORD=adminpw
       - PG_REP_HOST=192.168.1.2
-    container_name: pg_slave.org1.bc.cip
+    container_name: pg_slave.org1.hext.scd.org.br
     ports:
       - "5432:5432"
     networks:
       - ca_network
 
   zookeeper:
-    container_name: zookeeper.bc.cip
+    container_name: zookeeper.hext.scd.org.br
     # image: tmeister/zookeeper:latest
     image: ibmblockchain/fabric-zookeeper:$EXTERNALTAG
     restart: always

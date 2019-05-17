@@ -66,7 +66,7 @@ Organizations:
     - &OrdererOrg
         Name: OrdererOrg
         ID: OrdererMSP
-        MSPDir: crypto-config/ordererOrganizations/bc.cip/msp
+        MSPDir: crypto-config/ordererOrganizations/hext.scd.org.br/msp
         Policies:
             Readers:
                 Type: Signature
@@ -78,19 +78,19 @@ Organizations:
                 Type: Signature
                 Rule: "OR('OrdererMSP.admin')"
     - &Org1
-        Name: Org1MSP
-        ID: Org1MSP
-        MSPDir: crypto-config/peerOrganizations/org1.bc.cip/msp
+        Name: ISPB04391007
+        ID: ISPB04391007
+        MSPDir: crypto-config/peerOrganizations/hext.scd.org.br/msp
         Policies:
             Readers:
                 Type: Signature
-                Rule: "OR('Org1MSP.admin', 'Org1MSP.peer', 'Org1MSP.client')"
+                Rule: "OR('04391007.admin', '04391007.peer', '04391007.client')"
             Writers:
                 Type: Signature
-                Rule: "OR('Org1MSP.admin', 'Org1MSP.client')"
+                Rule: "OR('04391007.admin', '04391007.client')"
             Admins:
                 Type: Signature
-                Rule: "OR('Org1MSP.admin')"
+                Rule: "OR('04391007.admin')"
         AnchorPeers:
             - Host: peer1
               Port: 7051
@@ -170,12 +170,12 @@ Profiles:
             Organizations:
             - <<: *OrdererOrg
         Consortiums:
-            SampleConsortium:
+            SCDDEVICEID:
                 Organizations:
                 - *Org1
     ModeKafkaChannel:
         <<: *ChannelDefaults
-        Consortium: SampleConsortium
+        Consortium: SCDDEVICEID
         Application:
             <<: *ApplicationDefaults
             Organizations:

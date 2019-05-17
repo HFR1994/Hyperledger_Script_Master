@@ -10,7 +10,7 @@ ARCH=`uname -m`
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 
-ORG1CAKEY="$(ls ../../crypto-config/peerOrganizations/org1.bc.cip/ca/ | grep 'sk$')"
+ORG1CAKEY="$(ls ../../crypto-config/peerOrganizations/org1.hext.scd.org.br/ca/ | grep 'sk$')"
 
 #Set IMAGETAG
 

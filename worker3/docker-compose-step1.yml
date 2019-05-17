@@ -6,7 +6,7 @@ networks:
 services:
 
   zookeeper:
-    container_name: zookeeper.bc.cip
+    container_name: zookeeper.hext.scd.org.br
     image: ibmblockchain/fabric-zookeeper:$EXTERNALTAG
     restart: always
     environment:

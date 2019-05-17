@@ -10,38 +10,38 @@ export FABRIC_CFG_PATH=$PWD
 
 configtxgen -profile ModeKafkaOrderer -channelID scd-system-channel -outputBlock ./channel-artifacts/genesis.block
 configtxgen -profile ModeKafkaChannel -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID $CHANNEL_NAME
-configtxgen -profile ModeKafkaChannel -outputAnchorPeersUpdate ./channel-artifacts/Org1MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org1MSP
+configtxgen -profile ModeKafkaChannel -outputAnchorPeersUpdate ./channel-artifacts/04391007anchors.tx -channelID $CHANNEL_NAME -asOrg ISPB04391007
 
 ## Remove CA files
-rm -rf ./CA/*_sk ./CA/ca.org1.bc.cip-cert.pem
-cp -r ./crypto-config/peerOrganizations/org1.bc.cip/ca/* ./CA/
+rm -rf ./CA/*_sk ./CA/ca.org1.hext.scd.org.br-cert.pem
+cp -r ./crypto-config/peerOrganizations/hext.scd.org.br/ca/* ./CA/
 
 ## Remove Orderer files
 rm -rf ./Orderer/*/configtx/* ./Orderer/*/msp/orderer/* ./Orderer/*/tls/orderer/*
 
 cp ./channel-artifacts/* ./Orderer/Orderer1/configtx/
-cp -r ./crypto-config/ordererOrganizations/bc.cip/orderers/orderer1.bc.cip/msp ./Orderer/Orderer1/msp/orderer/
-cp -r ./crypto-config/ordererOrganizations/bc.cip/orderers/orderer1.bc.cip/tls ./Orderer/Orderer1/tls/orderer/
+cp -r ./crypto-config/ordererOrganizations/hext.scd.org.br/orderers/orderer1.hext.scd.org.br/msp ./Orderer/Orderer1/msp/orderer/
+cp -r ./crypto-config/ordererOrganizations/hext.scd.org.br/orderers/orderer1.hext.scd.org.br/tls ./Orderer/Orderer1/tls/orderer/
 
 cp ./channel-artifacts/* ./Orderer/Orderer2/configtx/
-cp -r ./crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/msp ./Orderer/Orderer2/msp/orderer/
-cp -r ./crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/tls ./Orderer/Orderer2/tls/orderer/
+cp -r ./crypto-config/ordererOrganizations/hext.scd.org.br/orderers/orderer2.hext.scd.org.br/msp ./Orderer/Orderer2/msp/orderer/
+cp -r ./crypto-config/ordererOrganizations/hext.scd.org.br/orderers/orderer2.hext.scd.org.br/tls ./Orderer/Orderer2/tls/orderer/
 
 cp ./channel-artifacts/* ./Orderer/Orderer3/configtx/
-cp -r ./crypto-config/ordererOrganizations/bc.cip/orderers/orderer3.bc.cip/msp ./Orderer/Orderer3/msp/orderer/
-cp -r ./crypto-config/ordererOrganizations/bc.cip/orderers/orderer3.bc.cip/tls ./Orderer/Orderer3/tls/orderer/
+cp -r ./crypto-config/ordererOrganizations/hext.scd.org.br/orderers/orderer3.hext.scd.org.br/msp ./Orderer/Orderer3/msp/orderer/
+cp -r ./crypto-config/ordererOrganizations/hext.scd.org.br/orderers/orderer3.hext.scd.org.br/tls ./Orderer/Orderer3/tls/orderer/
 
 ## Remove Peer files
 rm -rf ./Peer/*/configtx/* ./Peer/*/msp/orderer/* ./Peer/*/peer/*
 
 cp ./channel-artifacts/* ./Peer/Peer1/configtx/
-cp -r ./crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/msp ./Peer/Peer1/peer/
-cp -r ./crypto-config/peerOrganizations/org1.bc.cip/peers/peer1.org1.bc.cip/tls ./Peer/Peer1/peer/
-cp -r ./crypto-config/peerOrganizations/org1.bc.cip/users ./Peer/Peer1/msp/
-cp -r ./crypto-config/ordererOrganizations/bc.cip/orderers/orderer1.bc.cip/msp ./Peer/Peer1/msp/orderer
+cp -r ./crypto-config/peerOrganizations/hext.scd.org.br/peers/peer1.hext.scd.org.br/msp ./Peer/Peer1/peer/
+cp -r ./crypto-config/peerOrganizations/hext.scd.org.br/peers/peer1.hext.scd.org.br/tls ./Peer/Peer1/peer/
+cp -r ./crypto-config/peerOrganizations/hext.scd.org.br/users ./Peer/Peer1/msp/
+cp -r ./crypto-config/ordererOrganizations/hext.scd.org.br/orderers/orderer1.hext.scd.org.br/msp ./Peer/Peer1/msp/orderer
 
 cp ./channel-artifacts/* ./Peer/Peer2/configtx/
-cp -r ./crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/msp ./Peer/Peer2/peer/
-cp -r ./crypto-config/peerOrganizations/org1.bc.cip/peers/peer2.org1.bc.cip/tls ./Peer/Peer2/peer/
-cp -r ./crypto-config/peerOrganizations/org1.bc.cip/users ./Peer/Peer2/msp/
-cp -r ./crypto-config/ordererOrganizations/bc.cip/orderers/orderer2.bc.cip/msp ./Peer/Peer2/msp/orderer
+cp -r ./crypto-config/peerOrganizations/hext.scd.org.br/peers/peer2.hext.scd.org.br/msp ./Peer/Peer2/peer/
+cp -r ./crypto-config/peerOrganizations/hext.scd.org.br/peers/peer2.hext.scd.org.br/tls ./Peer/Peer2/peer/
+cp -r ./crypto-config/peerOrganizations/hext.scd.org.br/users ./Peer/Peer2/msp/
+cp -r ./crypto-config/ordererOrganizations/hext.scd.org.br/orderers/orderer2.hext.scd.org.br/msp ./Peer/Peer2/msp/orderer

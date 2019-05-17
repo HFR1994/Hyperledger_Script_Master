@@ -1,28 +1,33 @@
 OrdererOrgs:
   - Name: Orderer
-    Domain: bc.cip
+    Domain: hext.scd.org.br
     Specs:
       - Hostname: orderer1
         SANS:
           - orderer-svc
+          - orderer.hext.scd.org.br
       - Hostname: orderer2
         SANS:
           - orderer-svc
+          - orderer.hext.scd.org.br
       - Hostname: orderer3
         SANS:
           - orderer-svc
+          - orderer.hext.scd.org.br
 
 PeerOrgs:
-  - Name: Org1
-    Domain: org1.bc.cip
+  - Name: 04391007
+    Domain: hext.scd.org.br
     EnableNodeOUs: true
     CA:
       Specs:
         - Hostname: ca-svc
+          SANS:
+            - ca.04391007.hext.scd.org.br
     Specs:
       - Hostname: peer1
       - Hostname: peer2
     Template:
       Count: 0
     Users:
-      Count: 1
+      Count: 0

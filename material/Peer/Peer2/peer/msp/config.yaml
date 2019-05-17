@@ -1,8 +1,8 @@
 NodeOUs:
   Enable: true
   ClientOUIdentifier:
-    Certificate: cacerts/ca.org1.bc.cip-cert.pem
+    Certificate: cacerts/ca.hext.scd.org.br-cert.pem
     OrganizationalUnitIdentifier: client
   PeerOUIdentifier:
-    Certificate: cacerts/ca.org1.bc.cip-cert.pem
+    Certificate: cacerts/ca.hext.scd.org.br-cert.pem
     OrganizationalUnitIdentifier: peer
