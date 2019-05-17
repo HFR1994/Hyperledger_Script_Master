@@ -67,7 +67,6 @@ Organizations:
         Name: OrdererOrg
         ID: OrdererMSP
         MSPDir: crypto-config/ordererOrganizations/bc.cip/msp
-        AdminPrincipal: Role.ADMIN
         Policies:
             Readers:
                 Type: Signature
@@ -82,7 +81,6 @@ Organizations:
         Name: Org1MSP
         ID: Org1MSP
         MSPDir: crypto-config/peerOrganizations/org1.bc.cip/msp
-        AdminPrincipal: Role.ADMIN
         Policies:
             Readers:
                 Type: Signature
@@ -94,10 +92,10 @@ Organizations:
                 Type: Signature
                 Rule: "OR('Org1MSP.admin')"
         AnchorPeers:
-            - Host: peer1.hext.scd.org.br
-              Port: 7151
-            - Host: peer2.hext.scd.org.br
-              Port: 7251
+            - Host: peer1
+              Port: 7051
+            - Host: peer2
+              Port: 7051
 
 Application: &ApplicationDefaults
 
@@ -172,12 +170,12 @@ Profiles:
             Organizations:
             - <<: *OrdererOrg
         Consortiums:
-            InitialConsortium:
+            SampleConsortium:
                 Organizations:
                 - *Org1
     ModeKafkaChannel:
         <<: *ChannelDefaults
-        Consortium: InitialConsortium
+        Consortium: SampleConsortium
         Application:
             <<: *ApplicationDefaults
             Organizations:
