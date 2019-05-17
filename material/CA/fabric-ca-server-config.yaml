@@ -305,7 +305,7 @@ signing:
 #     CA certificates though it can still issue end entity certificates.
 ###########################################################################
 csr:
-  cn: Servico de Confianca Distribuida CA HEXT V1
+  cn: Servico de Confianca Distribuida CA PROD V1
   keyrequest:
     algo: ecdsa
     size: 256
