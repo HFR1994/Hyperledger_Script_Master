@@ -24,7 +24,7 @@ CHANNEL_NAME="cip_channel"
 # Grab the current directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-ORG1CAKEY="$(ls ./material/crypto-config/peerOrganizations/org1.hext.scd.org.br/ca/ | grep 'sk$')"
+ORG1CAKEY="$(ls ./material/crypto-config/peerOrganizations/org1.scd.org.br/ca/ | grep 'sk$')"
 
 IMAGETAG="latest"
 
@@ -37,18 +37,18 @@ echo ${FABRIC_START_TIMEOUT}
 sleep ${FABRIC_START_TIMEOUT}
 
 # Create the channel
-docker exec peer0.org1.hext.scd.org.br peer channel create -o orderer0.hext.scd.org.br:7050 -c $CHANNEL_NAME -f /etc/hyperledger/configtx/channel.tx --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.hext.scd.org.br-cert.pem
+docker exec peer0.org1.scd.org.br peer channel create -o orderer0.scd.org.br:7050 -c $CHANNEL_NAME -f /etc/hyperledger/configtx/channel.tx --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.scd.org.br-cert.pem
 
 echo ${FABRIC_START_TIMEOUT}
 sleep ${FABRIC_START_TIMEOUT}
 sleep ${FABRIC_START_TIMEOUT}
 
-# Join peer0.org1.hext.scd.org.br to the channel.
-docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.hext.scd.org.br/msp" peer0.org1.hext.scd.org.br peer channel join -b genesis.block --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.hext.scd.org.br-cert.pem
+# Join peer0.org1.scd.org.br to the channel.
+docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.scd.org.br/msp" peer0.org1.scd.org.br peer channel join -b genesis.block --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.scd.org.br-cert.pem
 
 # # Create the channel
-docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.hext.scd.org.br/msp" peer1.org1.hext.scd.org.br peer channel fetch config -o orderer0.hext.scd.org.br:7050 -c $CHANNEL_NAME --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.hext.scd.org.br-cert.pem
-# docker exec peer1.org1.hext.scd.org.br peer channel create -o orderer.hext.scd.org.br:7050 -c default -f /etc/hyperledger/configtx/material-channel.tx
+docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.scd.org.br/msp" peer1.org1.scd.org.br peer channel fetch config -o orderer0.scd.org.br:7050 -c $CHANNEL_NAME --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.scd.org.br-cert.pem
+# docker exec peer1.org1.scd.org.br peer channel create -o orderer.scd.org.br:7050 -c default -f /etc/hyperledger/configtx/material-channel.tx
 
-# # Join peer1.org1.hext.scd.org.br to the channel.
-docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.hext.scd.org.br/msp" peer1.org1.hext.scd.org.br peer channel join -b default_config.block --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.hext.scd.org.br-cert.pem
+# # Join peer1.org1.scd.org.br to the channel.
+docker exec -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.scd.org.br/msp" peer1.org1.scd.org.br peer channel join -b default_config.block --tls --cafile /etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.scd.org.br-cert.pem

@@ -6,9 +6,9 @@ networks:
 
 services:
 
-  orderer2.hext.scd.org.br:
-    container_name: orderer.hext.scd.org.br
-    hostname: orderer2.hext.scd.org.br
+  orderer2.scd.org.br:
+    container_name: orderer.scd.org.br
+    hostname: orderer2.scd.org.br
     image: ibmblockchain/fabric-orderer:$IMAGETAG
     environment:
       - LICENSE=accept
@@ -26,14 +26,14 @@ services:
       - ORDERER_KAFKA_RETRY_SHORTINTERVAL=1s
       - ORDERER_KAFKA_RETRY_SHORTTOTAL=30s
       - ORDERER_KAFKA_VERBOSE=true
-      - CONFIGTX_ORDERER_KAFKA_BROKERS=[kafka.hext.scd.org.br:9092, 192.168.1.3:9092, 192.168.1.4:9092]
+      - CONFIGTX_ORDERER_KAFKA_BROKERS=[kafka.scd.org.br:9092, 192.168.1.3:9092, 192.168.1.4:9092]
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
     command: orderer
     ports:
       - "7050:7050"
     volumes:
       - ../material/channel-artifacts/:/etc/hyperledger/configtx
-      - ../material/crypto-config/ordererOrganizations/hext.scd.org.br/orderers/orderer2.hext.scd.org.br/msp:/etc/hyperledger/msp/orderer/msp
-      - ../material/crypto-config/ordererOrganizations/hext.scd.org.br/orderers/orderer2.hext.scd.org.br/tls:/etc/hyperledger/tls/orderer/tls
+      - ../material/crypto-config/ordererOrganizations/scd.org.br/orderers/orderer2.scd.org.br/msp:/etc/hyperledger/msp/orderer/msp
+      - ../material/crypto-config/ordererOrganizations/scd.org.br/orderers/orderer2.scd.org.br/tls:/etc/hyperledger/tls/orderer/tls
     networks:
       - worker3_worker3

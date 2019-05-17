@@ -1,8 +1,8 @@
 version: '2'
 
 services:
-  orderer2.hext.scd.org.br:
-    container_name: orderer2.hext.scd.org.br
+  orderer2.scd.org.br:
+    container_name: orderer2.scd.org.br
     image: ibmblockchain/fabric-orderer:$IMAGETAG
     environment:
       - ORDERER_GENERAL_LOGLEVEL=debug
@@ -26,8 +26,8 @@ services:
       - 7050:7050
     volumes:
         - ./channel-artifacts/:/etc/hyperledger/configtx
-        - ./crypto-config/ordererOrganizations/hext.scd.org.br/orderers/orderer2.hext.scd.org.br/msp:/etc/hyperledger/msp/orderer/msp
-        - ./crypto-config/ordererOrganizations/hext.scd.org.br/orderers/orderer2.hext.scd.org.br/tls:/etc/hyperledger/tls/orderer/tls
+        - ./crypto-config/ordererOrganizations/scd.org.br/orderers/orderer2.scd.org.br/msp:/etc/hyperledger/msp/orderer/msp
+        - ./crypto-config/ordererOrganizations/scd.org.br/orderers/orderer2.scd.org.br/tls:/etc/hyperledger/tls/orderer/tls
     depends_on:
       - kafka8
       - kafka9

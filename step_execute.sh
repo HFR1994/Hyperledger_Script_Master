@@ -35,7 +35,7 @@ function networkUp() {
         # Grab the current directory
         DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
         #Replace Certificate Key
-        ORG1CAKEY="$(ls ./material/crypto-config/peerOrganizations/org1.hext.scd.org.br/ca/ | grep 'sk$')"
+        ORG1CAKEY="$(ls ./material/crypto-config/peerOrganizations/org1.scd.org.br/ca/ | grep 'sk$')"
         #Set IMAGETAG
         IMAGETAG="1.4.0"
         EXTERNALTAG="0.4.10"
@@ -55,7 +55,7 @@ function networkDown() {
         DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
         #Replace Certificate Key
-        ORG1CAKEY="$(ls ./material/crypto-config/peerOrganizations/org1.hext.scd.org.br/ca/ | grep 'sk$')"
+        ORG1CAKEY="$(ls ./material/crypto-config/peerOrganizations/org1.scd.org.br/ca/ | grep 'sk$')"
         #Set IMAGETAG
         IMAGETAG="1.4.0"
         EXTERNALTAG="0.4.10"

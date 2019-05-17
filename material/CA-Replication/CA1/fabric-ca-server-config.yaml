@@ -154,7 +154,7 @@ registry:
 #############################################################################
 db:
   type: postgres
-  datasource: host=pg.master.hext.scd.org.br port=5432 user=admin password=adminpw dbname=fabric sslmode=disable
+  datasource: host=pg.master.scd.org.br port=5432 user=admin password=adminpw dbname=fabric sslmode=disable
   tls:
     enabled: false
     certfiles:

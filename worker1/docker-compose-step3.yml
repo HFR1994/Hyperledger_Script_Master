@@ -6,9 +6,9 @@ networks:
 
 services:
 
-  orderer0.hext.scd.org.br:
-    container_name: orderer.hext.scd.org.br
-    hostname: orderer0.hext.scd.org.br
+  orderer0.scd.org.br:
+    container_name: orderer.scd.org.br
+    hostname: orderer0.scd.org.br
     image: ibmblockchain/fabric-orderer:$IMAGETAG
     environment:
       - FABRIC_LOGGING_SPEC=DEBUG
@@ -26,21 +26,21 @@ services:
       - ORDERER_KAFKA_RETRY_SHORTINTERVAL=1s
       - ORDERER_KAFKA_RETRY_SHORTTOTAL=30s
       - ORDERER_KAFKA_VERBOSE=true
-      - CONFIGTX_ORDERER_KAFKA_BROKERS=[kafka.hext.scd.org.br:9092, 192.168.1.3:9092, 192.168.1.4:9092]
+      - CONFIGTX_ORDERER_KAFKA_BROKERS=[kafka.scd.org.br:9092, 192.168.1.3:9092, 192.168.1.4:9092]
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
     command: orderer
     ports:
       - "7050:7050"
     volumes:
       - ../material/channel-artifacts/:/etc/hyperledger/configtx
-      - ../material/crypto-config/ordererOrganizations/hext.scd.org.br/orderers/orderer0.hext.scd.org.br/msp:/etc/hyperledger/msp/orderer/msp
-      - ../material/crypto-config/ordererOrganizations/hext.scd.org.br/orderers/orderer0.hext.scd.org.br/tls:/etc/hyperledger/tls/orderer/tls
+      - ../material/crypto-config/ordererOrganizations/scd.org.br/orderers/orderer0.scd.org.br/msp:/etc/hyperledger/msp/orderer/msp
+      - ../material/crypto-config/ordererOrganizations/scd.org.br/orderers/orderer0.scd.org.br/tls:/etc/hyperledger/tls/orderer/tls
     networks:
       - worker1_worker1
 
-  peer0.org1.hext.scd.org.br:
-    container_name: peer.org1.hext.scd.org.br
-    hostname: peer0.org1.hext.scd.org.br
+  peer0.org1.scd.org.br:
+    container_name: peer.org1.scd.org.br
+    hostname: peer0.org1.scd.org.br
     image: ibmblockchain/fabric-peer:$IMAGETAG
     environment:
       - LICENSE=accept
@@ -52,7 +52,7 @@ services:
       - CORE_PEER_GOSSIP_BOOTSTRAP=peer1:7051
       - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer2:7051
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb.hext.scd.org.br:5984
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb.scd.org.br:5984
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
@@ -73,18 +73,18 @@ services:
     volumes:
       - /var/run/:/host/var/run/
       - ../material/channel-artifacts/:/etc/hyperledger/configtx
-      - ../material/crypto-config/peerOrganizations/org1.hext.scd.org.br/peers/peer0.org1.hext.scd.org.br/msp:/etc/hyperledger/peer/msp
-      - ../material/crypto-config/peerOrganizations/org1.hext.scd.org.br/peers/peer0.org1.hext.scd.org.br/tls:/etc/hyperledger/peer/tls
-      - ../material/crypto-config/peerOrganizations/org1.hext.scd.org.br/users:/etc/hyperledger/msp/users
-      - ../material/crypto-config/ordererOrganizations/hext.scd.org.br/orderers/orderer0.hext.scd.org.br/msp:/etc/hyperledger/msp/orderer/msp
+      - ../material/crypto-config/peerOrganizations/org1.scd.org.br/peers/peer0.org1.scd.org.br/msp:/etc/hyperledger/peer/msp
+      - ../material/crypto-config/peerOrganizations/org1.scd.org.br/peers/peer0.org1.scd.org.br/tls:/etc/hyperledger/peer/tls
+      - ../material/crypto-config/peerOrganizations/org1.scd.org.br/users:/etc/hyperledger/msp/users
+      - ../material/crypto-config/ordererOrganizations/scd.org.br/orderers/orderer0.scd.org.br/msp:/etc/hyperledger/msp/orderer/msp
     depends_on:
-      - orderer0.hext.scd.org.br
-      - couchdb.hext.scd.org.br
+      - orderer0.scd.org.br
+      - couchdb.scd.org.br
     networks:
       - worker1_worker1
 
-  couchdb.hext.scd.org.br:
-    container_name: couchdb.hext.scd.org.br
+  couchdb.scd.org.br:
+    container_name: couchdb.scd.org.br
     image: ibmblockchain/fabric-couchdb:$IMAGETAG
     ports:
       - "5984:5984"

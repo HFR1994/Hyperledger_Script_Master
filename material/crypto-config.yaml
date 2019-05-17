@@ -1,29 +1,29 @@
 OrdererOrgs:
   - Name: Orderer
-    Domain: hext.scd.org.br
+    Domain: scd.org.br
     Specs:
       - Hostname: orderer1
         SANS:
           - orderer-svc
-          - orderer.hext.scd.org.br
+          - orderer.scd.org.br
       - Hostname: orderer2
         SANS:
           - orderer-svc
-          - orderer.hext.scd.org.br
+          - orderer.scd.org.br
       - Hostname: orderer3
         SANS:
           - orderer-svc
-          - orderer.hext.scd.org.br
+          - orderer.scd.org.br
 
 PeerOrgs:
   - Name: 04391007
-    Domain: hext.scd.org.br
+    Domain: scd.org.br
     EnableNodeOUs: true
     CA:
       Specs:
         - Hostname: ca-svc
           SANS:
-            - ca.04391007.hext.scd.org.br
+            - ca.04391007.scd.org.br
     Specs:
       - Hostname: peer1
       - Hostname: peer2

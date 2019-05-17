@@ -2,8 +2,8 @@ version: '2'
 
 services:
 
-  orderer1.hext.scd.org.br:
-    container_name: orderer1.hext.scd.org.br
+  orderer1.scd.org.br:
+    container_name: orderer1.scd.org.br
     image: ibmblockchain/fabric-orderer:$IMAGETAG
     environment:
       - ORDERER_GENERAL_LOGLEVEL=debug
@@ -27,30 +27,30 @@ services:
       - 7050:7050
     volumes:
         - ./channel-artifacts/:/etc/hyperledger/configtx
-        - ./crypto-config/ordererOrganizations/hext.scd.org.br/orderers/orderer1.hext.scd.org.br/msp:/etc/hyperledger/msp/orderer/msp
-        - ./crypto-config/ordererOrganizations/hext.scd.org.br/orderers/orderer1.hext.scd.org.br/tls:/etc/hyperledger/tls/orderer/tls
+        - ./crypto-config/ordererOrganizations/scd.org.br/orderers/orderer1.scd.org.br/msp:/etc/hyperledger/msp/orderer/msp
+        - ./crypto-config/ordererOrganizations/scd.org.br/orderers/orderer1.scd.org.br/tls:/etc/hyperledger/tls/orderer/tls
     depends_on:
       - kafka4
       - kafka5
       - kafka6
       - kafka7
 
-  peer2.org1.hext.scd.org.br:
-    container_name: peer2.org1.hext.scd.org.br
+  peer2.org1.scd.org.br:
+    container_name: peer2.org1.scd.org.br
     image: ibmblockchain/fabric-peer:$IMAGETAG
     environment:
       - CORE_LOGGING_PEER=debug
       - CORE_CHAINCODE_LOGGING_LEVEL=DEBUG
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
-      - CORE_PEER_ID=peer2.org1.hext.scd.org.br
-      - CORE_PEER_ADDRESS=peer2.org1.hext.scd.org.br:7051
+      - CORE_PEER_ID=peer2.org1.scd.org.br
+      - CORE_PEER_ADDRESS=peer2.org1.scd.org.br:7051
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=default
       - CORE_PEER_LOCALMSPID=04391007
       - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/peer/msp
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb2:5984
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer2.org1.hext.scd.org.br:7051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer2.org1.hext.scd.org.br:7051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer2.org1.scd.org.br:7051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer2.org1.scd.org.br:7051
       - CORE_PEER_TLS_ENABLED=true
       - CORE_PEER_GOSSIP_USELEADERELECTION=true
       - CORE_PEER_GOSSIP_ORGLEADER=false
@@ -66,10 +66,10 @@ services:
     volumes:
         - /var/run/:/host/var/run/
         - ./channel-artifacts/:/etc/hyperledger/configtx
-        - ./crypto-config/peerOrganizations/org1.hext.scd.org.br/peers/peer2.org1.hext.scd.org.br/msp:/etc/hyperledger/peer/msp
-        - ./crypto-config/peerOrganizations/org1.hext.scd.org.br/peers/peer2.org1.hext.scd.org.br/tls:/etc/hyperledger/peer/tls
-        - ./crypto-config/peerOrganizations/org1.hext.scd.org.br/users:/etc/hyperledger/msp/users
-        - ./crypto-config/ordererOrganizations/hext.scd.org.br/orderers/orderer1.hext.scd.org.br/msp:/etc/hyperledger/msp/orderer/msp
+        - ./crypto-config/peerOrganizations/org1.scd.org.br/peers/peer2.org1.scd.org.br/msp:/etc/hyperledger/peer/msp
+        - ./crypto-config/peerOrganizations/org1.scd.org.br/peers/peer2.org1.scd.org.br/tls:/etc/hyperledger/peer/tls
+        - ./crypto-config/peerOrganizations/org1.scd.org.br/users:/etc/hyperledger/msp/users
+        - ./crypto-config/ordererOrganizations/scd.org.br/orderers/orderer1.scd.org.br/msp:/etc/hyperledger/msp/orderer/msp
     depends_on:
       - couchdb2
 
@@ -81,22 +81,22 @@ services:
     environment:
       DB_URL: http://localhost:7984/member_db
 
-  peer3.org1.hext.scd.org.br:
-    container_name: peer3.org1.hext.scd.org.br
+  peer3.org1.scd.org.br:
+    container_name: peer3.org1.scd.org.br
     image: ibmblockchain/fabric-peer:$IMAGETAG
     environment:
       - CORE_LOGGING_PEER=debug
       - CORE_CHAINCODE_LOGGING_LEVEL=DEBUG
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
-      - CORE_PEER_ID=peer3.org1.hext.scd.org.br
-      - CORE_PEER_ADDRESS=peer3.org1.hext.scd.org.br:7051
+      - CORE_PEER_ID=peer3.org1.scd.org.br
+      - CORE_PEER_ADDRESS=peer3.org1.scd.org.br:7051
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=default
       - CORE_PEER_LOCALMSPID=04391007
       - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/peer/msp
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb3:5984
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer3.org1.hext.scd.org.br:7051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer2.org1.hext.scd.org.br:7051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer3.org1.scd.org.br:7051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer2.org1.scd.org.br:7051
       - CORE_PEER_TLS_ENABLED=true
       - CORE_PEER_GOSSIP_USELEADERELECTION=true
       - CORE_PEER_GOSSIP_ORGLEADER=false
@@ -112,10 +112,10 @@ services:
     volumes:
         - /var/run/:/host/var/run/
         - ./channel-artifacts/:/etc/hyperledger/configtx
-        - ./crypto-config/peerOrganizations/org1.hext.scd.org.br/peers/peer3.org1.hext.scd.org.br/msp:/etc/hyperledger/peer/msp
-        - ./crypto-config/peerOrganizations/org1.hext.scd.org.br/peers/peer3.org1.hext.scd.org.br/tls:/etc/hyperledger/peer/tls
-        - ./crypto-config/peerOrganizations/org1.hext.scd.org.br/users:/etc/hyperledger/msp/users
-        - ./crypto-config/ordererOrganizations/hext.scd.org.br/orderers/orderer1.hext.scd.org.br/msp:/etc/hyperledger/msp/orderer/msp
+        - ./crypto-config/peerOrganizations/org1.scd.org.br/peers/peer3.org1.scd.org.br/msp:/etc/hyperledger/peer/msp
+        - ./crypto-config/peerOrganizations/org1.scd.org.br/peers/peer3.org1.scd.org.br/tls:/etc/hyperledger/peer/tls
+        - ./crypto-config/peerOrganizations/org1.scd.org.br/users:/etc/hyperledger/msp/users
+        - ./crypto-config/ordererOrganizations/scd.org.br/orderers/orderer1.scd.org.br/msp:/etc/hyperledger/msp/orderer/msp
     depends_on:
       - couchdb3
 

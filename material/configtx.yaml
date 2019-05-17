@@ -66,7 +66,7 @@ Organizations:
     - &OrdererOrg
         Name: OrdererOrg
         ID: OrdererMSP
-        MSPDir: crypto-config/ordererOrganizations/hext.scd.org.br/msp
+        MSPDir: crypto-config/ordererOrganizations/scd.org.br/msp
         Policies:
             Readers:
                 Type: Signature
@@ -80,7 +80,7 @@ Organizations:
     - &Org1
         Name: ISPB04391007
         ID: ISPB04391007
-        MSPDir: crypto-config/peerOrganizations/hext.scd.org.br/msp
+        MSPDir: crypto-config/peerOrganizations/scd.org.br/msp
         Policies:
             Readers:
                 Type: Signature

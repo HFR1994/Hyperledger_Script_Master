@@ -6,8 +6,8 @@ networks:
 
 services:
 
-  kafka.hext.scd.org.br:
-    container_name: kafka.hext.scd.org.br
+  kafka.scd.org.br:
+    container_name: kafka.scd.org.br
     # image: wurstmeister/kafka:latest
     image: ibmblockchain/fabric-kafka:$EXTERNALTAG
     restart: always
@@ -20,7 +20,7 @@ services:
       - KAFKA_MIN_INSYNC_REPLICAS=2
       - KAFKA_DEFAULT_REPLICATION_FACTOR=3
       - KAFKA_LOG_RETENTION_MS=-1
-      - KAFKA_ZOOKEEPER_CONNECT=192.168.1.2:2181,zookeeper.hext.scd.org.br:2181,192.168.1.4:2181
+      - KAFKA_ZOOKEEPER_CONNECT=192.168.1.2:2181,zookeeper.scd.org.br:2181,192.168.1.4:2181
     ports:
       - "9092:9092"
     networks:
