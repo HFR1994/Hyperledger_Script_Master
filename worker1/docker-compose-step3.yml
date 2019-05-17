@@ -27,9 +27,6 @@ services:
       - ORDERER_KAFKA_RETRY_SHORTTOTAL=30s
       - ORDERER_KAFKA_VERBOSE=true
       - CONFIGTX_ORDERER_KAFKA_BROKERS=[kafka.bc.cip:9092, 192.168.1.3:9092, 192.168.1.4:9092]
-      - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/var/hyperledger/orderer/tls/server.crt
-      - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/var/hyperledger/orderer/tls/server.key
-      - ORDERER_GENERAL_CLUSTER_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
     command: orderer
     ports:
