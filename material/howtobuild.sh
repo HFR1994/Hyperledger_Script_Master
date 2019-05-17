@@ -13,7 +13,7 @@ configtxgen -profile ModeKafkaChannel -outputCreateChannelTx ./channel-artifacts
 configtxgen -profile ModeKafkaChannel -outputAnchorPeersUpdate ./channel-artifacts/04391007anchors.tx -channelID $CHANNEL_NAME -asOrg ISPB04391007
 
 ## Remove CA files
-rm -rf ./CA/*_sk ./CA/ca.org1.hext.scd.org.br-cert.pem
+rm -rf ./CA/*_sk ./CA/*.pem
 cp -r ./crypto-config/peerOrganizations/hext.scd.org.br/ca/* ./CA/
 
 ## Remove Orderer files
