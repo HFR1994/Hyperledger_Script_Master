@@ -60,9 +60,11 @@ class Auxiliar{
     }
 
     static extrairMSPID(stub){
-        if(!stub.txId) return "MSPIDforTEST"
+        if(!stub.txId) return "TEST_ISPB11111"
         let _clientIdentity = new ClientIdentity(stub);
         let mspid = _clientIdentity.getMSPID();
+        // tratamento do MSPID , regras de neogio
+        //
         if(mspid) {
             return mspid
         }

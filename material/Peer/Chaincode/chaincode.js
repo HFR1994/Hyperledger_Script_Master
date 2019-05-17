@@ -65,8 +65,12 @@ class Chaincode extends Contract {
                 dispositivo.idCertificado = idCertificado
             }else{
                 //Todas as demais entidas são obrigadas a registrar os ispb usando o MSPID
-                dispositivo.ispb = mspid
-                ispb = mspid                
+                // tratamento de string por regra de negocio, só pegar os numeros depois da palavra ISPB,
+                // ex: ISPB00888 = 008888
+                let ispbTratado = mspid.split("B")[1]
+
+                dispositivo.ispb = ispbTratado
+                ispb = ispbTratado                
             }
             //Registrando a qualificação do dispositivo na rede
             await ctx.stub.putState(dispositivo.idDispositivo, Auxiliar.jsonParaBytes(dispositivo.paraJSON()))
@@ -79,7 +83,9 @@ class Chaincode extends Contract {
             }
 
         } catch (erro) {
-            let ISPB = ispb == "" ? Auxiliar.extrairMSPID(ctx.stub) : ispb
+
+            let ispbTratado = Auxiliar.extrairMSPID(ctx.stub).split('B')[1]
+            let ISPB = ispb == undefined ? ispbTratado : ispb
 
             console.log(`Método: qualificaDispositivo | ISPB: ${ISPB} | Código de retorno -99`);
             return {
