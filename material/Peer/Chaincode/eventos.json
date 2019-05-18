@@ -1,9 +1,0 @@
-{
-    "1" : "Dispositivo que nunca fez transações",
-    "3" : "Dispositivo furtado / roubado / perdido",
-    "4" : "Cliente recuperou dispositivo furtado / roubado / perdido",
-    "5" : "Banco identifica celular emulado",
-    "6" : "Banco identifica celular jailbreak / root",
-    "7" : "Sistema operacional não permite mais a coleta dos dados utilizados para gerar o DeviceID",
-    "8" : "Cliente realiza diversas trocas de chip"
-}
