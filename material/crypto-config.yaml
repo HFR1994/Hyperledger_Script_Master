@@ -24,6 +24,8 @@ PeerOrgs:
         - Hostname: ca-svc
           SANS:
             - ca.04391007.hext.scd.org.br
+            - localhost
+            - ca-svc
     Specs:
       - Hostname: peer1
       - Hostname: peer2
