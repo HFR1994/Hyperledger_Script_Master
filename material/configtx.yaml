@@ -87,7 +87,7 @@ Organizations:
                 Rule: "OR('ISPB04391007.admin', 'ISPB04391007.peer', 'ISPB04391007.client')"
             Writers:
                 Type: Signature
-                Rule: "OR('ISPB04391007.admin', 'ISPB04391007.client')"
+                Rule: "OR('ISPB04391007.admin', 'ISPB04391007.client', 'ISPB04391007.peer')"
             Admins:
                 Type: Signature
                 Rule: "OR('ISPB04391007.admin')"
