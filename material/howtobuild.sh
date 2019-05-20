@@ -32,7 +32,7 @@ cp -r ./crypto-config/ordererOrganizations/hext.scd.org.br/orderers/orderer3.hex
 cp -r ./crypto-config/ordererOrganizations/hext.scd.org.br/orderers/orderer3.hext.scd.org.br/tls ./Orderer/Orderer3/tls/orderer/
 
 ## Remove Peer files
-rm -rf ./Peer/*/configtx/* ./Peer/*/msp/orderer/* ./Peer/*/peer/*
+rm -rf ./Peer/*/configtx/* ./Peer/*/msp/orderer/* ./Peer/*/peer/* ./Peer/*/msp/users
 
 cp ./channel-artifacts/* ./Peer/Peer1/configtx/
 cp -r ./crypto-config/peerOrganizations/hext.scd.org.br/peers/peer1.hext.scd.org.br/msp ./Peer/Peer1/peer/
