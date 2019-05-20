@@ -86,8 +86,6 @@ Organizations:
         AnchorPeers:
             - Host: peer1
               Port: 7051
-            - Host: peer2
-              Port: 7051
 
 Application: &ApplicationDefaults
 
