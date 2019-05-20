@@ -110,7 +110,7 @@ Application: &ApplicationDefaults
             Rule: "MAJORITY Admins"
 
     Capabilities:
-        #<<: *ApplicationCapabilities
+        <<: *ApplicationCapabilities
 
 Orderer: &OrdererDefaults
     OrdererType: kafka
